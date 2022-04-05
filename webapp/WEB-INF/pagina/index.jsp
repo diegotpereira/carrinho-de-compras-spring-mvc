@@ -12,6 +12,7 @@
         </head>
 
         <body>
+            <jsp:include page="/WEB-INF/pagina/navbar.jsp" />
             <jsp:include page="/WEB-INF/pagina/footer.jsp" />
         </body>
 
