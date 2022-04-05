@@ -25,7 +25,7 @@
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
                     <div class="nav navbar">
-                        <img class="navbar-brand" src="<c:url value=" /resource/imagens/shopieasy-logo.png "/>" href="<c:url value=" /index "/>" width="200px" height="100px" alt="logo-image" />
+                             <img class="navbar-brand" src="<c:url value="/resource/imagens/shopieasy-logo.png"/>" href="<c:url value="/index"/>" width="200px" height="100px" alt="logo-image"></img>
                     </div>
 
                     <div class="navbar-header">

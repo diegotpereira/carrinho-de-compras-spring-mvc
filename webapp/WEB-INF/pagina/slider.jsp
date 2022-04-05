@@ -36,19 +36,19 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                                <img src="<c:url value=" /resource/imagens/oppo.jpg "/>" alt="Image1" width="460" height="345">
+                                <img src="<c:url value="/resource/imagens/oppo.jpg"/>" alt="Image1" width="460" height="345">
                             </div>
                             <div class="item">
-                                <img src="<c:url value=" /resource/imagens/oppo1.jpg "/>" alt="Image2" width="460" height="345">
+                                <img src="<c:url value="/resource/imagens/oppo1.jpg"/>" alt="Image2" width="460" height="345">
                             </div>
                             <div class="item">
-                                <img src="<c:url value=" /resource/imagens/oppo2.jpg "/>" alt="Image3" width="460" height="345">
+                                <img src="<c:url value="/resource/imagens/oppo2.jpg"/>" alt="Image3" width="460" height="345">
                             </div>
                             <div class="item">
-                                <img src="<c:url value=" /resource/imagens/oppo3.jpg "/>" alt="Image4" width="460" height="345">
+                                <img src="<c:url value="/resource/imagens/oppo3.jpg"/>" alt="Image4" width="460" height="345">
                             </div>
                             <div class="item">
-                                <img src="<c:url value=" /resource/imagens/oppo4.jpg "/>" alt="Image5" width="460" height="345">
+                                <img src="<c:url value="/resource/imagens/oppo4.png"/>" alt="Image5" width="460" height="345">
                             </div>
                         </div>
 
