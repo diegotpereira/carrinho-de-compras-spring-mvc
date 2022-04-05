@@ -20,6 +20,7 @@
         <body>
             <jsp:include page="/WEB-INF/pagina/navbar.jsp" />
             <jsp:include page="/WEB-INF/pagina/slider.jsp" />
+            <jsp:include page="/WEB-INF/pagina/produtoGrid.jsp" />
             <jsp:include page="/WEB-INF/pagina/footer.jsp" />
         </body>
 
