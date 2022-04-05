@@ -9,6 +9,15 @@
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <!-- CSS  -->
+            <link href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+            <link href="${pageContext.request.contextPath}/resource/css/overall.css" rel="stylesheet" type="text/css">
+
+            <!-- CSS  -->
+            <script src="${pageContext.request.contextPath}/resource/js/jquery.js"></script>
+            <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
+
             <title>Document</title>
         </head>
 
@@ -16,7 +25,7 @@
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
                     <div class="nav navbar">
-                        <img class="navbar-brand" src="<c:url value="/resource/imagens/shopieasy-logo.png"/>" href="<c:url value=" /index "/>" width="200px" height="100px" alt="logo-image" />
+                        <img class="navbar-brand" src="<c:url value=" /resource/imagens/shopieasy-logo.png "/>" href="<c:url value=" /index "/>" width="200px" height="100px" alt="logo-image" />
                     </div>
 
                     <div class="navbar-header">
@@ -31,7 +40,7 @@
                         <ul class="nav navbar-nav">
                             <li><a href="">Home</a></li>
                             <li><a href="">Lista de Produtos</a></li>
-                            <li><a href="">Sobre Nós</a></li>
+                            <li><a href="">Sobre Nï¿½s</a></li>
                             <li><a href="">Contato</a></li>
                             <li><a href="">Add Produto</a></li>
                         </ul>
