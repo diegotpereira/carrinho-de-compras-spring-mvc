@@ -12,7 +12,7 @@
 
 	<mvc:annotation-driven></mvc:annotation-driven>
 	
-	<!--  <mvc:default-servlet-handler/> -->
+	 <mvc:default-servlet-handler/>
 	
 
 	<context:component-scan base-package="br.com.java.spring.mvc"></context:component-scan>

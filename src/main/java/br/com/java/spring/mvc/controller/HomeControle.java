@@ -11,4 +11,22 @@ public class HomeControle {
 		
 		return "index";
 	}
+
+	@RequestMapping("/entrar")
+	public String entrar() {
+
+		return "entrar";
+	}
+	
+	@RequestMapping("/sobre")
+	public String sobre() {
+
+		return "sobre";
+	}
+	
+	@RequestMapping("/contato")
+	public String contato() {
+
+		return "contato";
+	}
 }

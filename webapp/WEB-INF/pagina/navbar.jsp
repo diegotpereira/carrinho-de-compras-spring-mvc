@@ -25,7 +25,7 @@
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
                     <div class="nav navbar">
-                             <img class="navbar-brand" src="<c:url value="/resource/imagens/shopieasy-logo.png"/>" href="<c:url value="/index"/>" width="200px" height="100px" alt="logo-image"></img>
+                        <img class="navbar-brand" src="<c:url value=" /resource/imagens/shopieasy-logo.png "/>" href="<c:url value=" /index "/>" width="200px" height="100px" alt="logo-image"></img>
                     </div>
 
                     <div class="navbar-header">
@@ -38,26 +38,26 @@
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Lista de Produtos</a></li>
-                            <li><a href="">Sobre Nï¿½s</a></li>
-                            <li><a href="">Contato</a></li>
-                            <li><a href="">Add Produto</a></li>
+                            <li><a href=" <c:url value="/index1" />">Home</a></li>
+                            <li><a href=" <c:url value="/getTodosProdutos" />">Lista de Produtos</a></li>
+                            <li><a href=" <c:url value="/sobre" />">Sobre Nós</a></li>
+                            <li><a href=" <c:url value="/contato" />">Contato</a></li>
+                            <li><a href=" <c:url value="/admin/produto/addProduto" />">Add Produto</a></li>
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="">
+                                <a href="<c:url value="/" />">
                                     <span class="glyphicon glyphicon-shopping-user"></span> Bem vindo
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="<c:url value="/carrinho" />">
                                     <span class="glyphicon glyphicon-shopping-cart"></span> Carrinho
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="<c:url value="/sair" />">
                                     <span class="glyphicon glyphicon-log-out"></span> Sair
                                 </a>
                             </li>
@@ -65,17 +65,17 @@
 
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="">
+                                <a href="<c:url value="/carrinho" />">
                                     <span class="glyphicon glyphicon-shopping-cart"></span> Meu Carrinho
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="<c:url value="/cadastrar" />">
                                     <span class="glyphicon glyphicon-log-user"></span> Cadastre-se
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="<c:url value="/entrar" />">
                                     <span class="glyphicon glyphicon-log-in"></span> Entrar
                                 </a>
                             </li>
