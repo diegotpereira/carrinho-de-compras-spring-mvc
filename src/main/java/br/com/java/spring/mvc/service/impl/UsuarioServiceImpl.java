@@ -25,7 +25,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 	}
 
 	@Override
-	public void deletarUsuario(String usuarioId) {
+	public void deletarUsuario(int usuarioId) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -37,7 +37,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 	}
 
 	@Override
-	public Usuario getUsuarioPorId(String usuarioId) {
+	public Usuario getUsuarioPorId(int usuarioId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

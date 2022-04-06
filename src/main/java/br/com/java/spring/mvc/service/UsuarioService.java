@@ -8,9 +8,9 @@ public interface UsuarioService {
 	
 	List<Usuario> getTodosUsuarios();
 
-	void deletarUsuario(String usuarioId);
+	void deletarUsuario(int usuarioId);
 
 	void addUsuario(Usuario usuario);
 
-	Usuario getUsuarioPorId(String usuarioId);
+	Usuario getUsuarioPorId(int usuarioId);
 }

@@ -8,9 +8,9 @@ public interface UsuarioDao {
 	
 	List<Usuario> getTodosUsuarios();
 
-	void deletarUSuario(String usuarioId);
+	void deletarUSuario(int usuarioId);
 
 	void addUsuario(Usuario usuario);
 
-	Usuario getUsuarioPorId(String usuarioId);
+	Usuario getUsuarioPorId(int usuarioId);
 }

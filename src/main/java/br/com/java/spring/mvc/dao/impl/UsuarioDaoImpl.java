@@ -24,7 +24,7 @@ public class UsuarioDaoImpl implements UsuarioDao{
 	}
 
 	@Override
-	public void deletarUSuario(String usuarioId) {
+	public void deletarUSuario(int usuarioId) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -39,7 +39,7 @@ public class UsuarioDaoImpl implements UsuarioDao{
 	}
 
 	@Override
-	public Usuario getUsuarioPorId(String usuarioId) {
+	public Usuario getUsuarioPorId(int usuarioId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
