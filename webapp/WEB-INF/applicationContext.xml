@@ -8,15 +8,24 @@
        http://www.springframework.org/schema/security/spring-security.xsd
        http://www.springframework.org/schema/webflow-config 
         http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd">
+        
+        
+        	<!-- Run H2 web server within application that will access the same in-memory database -->
+	<bean id="h2Server" class="org.h2.tools.Server" factory-method="createTcpServer" init-method="start" destroy-method="stop" depends-on="h2WebServer">
+    	<constructor-arg value="-tcp,-tcpAllowOthers,-tcpPort,9092"/>
+	</bean>
+	<bean id="h2WebServer" class="org.h2.tools.Server" factory-method="createWebServer" init-method="start" destroy-method="stop">
+    	<constructor-arg value="-web,-webAllowOthers,-webPort,8082"/>
+	</bean>
 
 	
 	<!-- propriedades do banco de dados DataSource -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="org.h2.Driver" />
-		<property name="url" value="jdbc:h2:tcp://localhost/~/carrinho_de_compras_spring_mvc" />
-		<property name="username" value="sa" />
-		<property name="password" value="" />
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/carrinho_de_compras_spring_mvc?useSSL=false&amp;serverTimezone=UTC" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
 	</bean>
 
 	<bean id="sessionFactory"
@@ -26,16 +35,18 @@
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="hibernateProperties">
 			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 
 				<!-- hibernate mapeamento para banco de dados automaticamente -->
 				<!-- quando usamos create-drop em vez de update a tabela é criada automaticamente
                      quando o servidor for executado depois disso, ele cairá quando o servidor parar -->
-				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
 
 				<!-- se a consulta quer mostrar os dados no console -->
 				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.format_sql">true</prop>
+<!-- 				<prop key="spring.h2.console.enabled">true</prop> -->
+<!-- 				<prop key="spring.h2.console.path=/h2-console">true</prop> -->
 
 			</props>
 		</property>
@@ -61,6 +72,8 @@
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+	
+	 <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
 
 		
 </beans>
