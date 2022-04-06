@@ -11,8 +11,8 @@ public class Usuario implements Serializable{
 	private static final long serialVersionUID = 2681531852204068105L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String usuarioId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int usuarioId;
 
 	private String emailId;
 	private String password;
@@ -28,10 +28,10 @@ public class Usuario implements Serializable{
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-	public String getUsuarioId() {
+	public int getUsuarioId() {
 		return usuarioId;
 	}
-	public void setUsuarioId(String usuarioId) {
+	public void setUsuarioId(int usuarioId) {
 		this.usuarioId = usuarioId;
 	}
 	public String getEmailId() {

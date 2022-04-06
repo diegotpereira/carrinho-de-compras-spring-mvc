@@ -11,8 +11,8 @@ public class EnderecoEntrega implements Serializable{
 	private static final long serialVersionUID = 7551999649936522523L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String enderecoEntregaId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int enderecoEntregaId;
 
 	private String endereco;
 	private String cidade;
@@ -23,11 +23,11 @@ public class EnderecoEntrega implements Serializable{
 	@OneToOne(mappedBy = "enderecoEntrega")
 	private Cliente cliente;
 
-	public String getEnderecoCobrancaId() {
+	public int getEnderecoCobrancaId() {
 		return enderecoEntregaId;
 	}
 	
-	public void setEnderecoCobrancaId(String enderecoCobrancaId) {
+	public void setEnderecoCobrancaId(int enderecoCobrancaId) {
 		this.enderecoEntregaId = enderecoCobrancaId;
 	}
 

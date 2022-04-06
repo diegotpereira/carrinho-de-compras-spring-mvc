@@ -10,8 +10,8 @@ public class Cliente implements Serializable{
 	private static final long serialVersionUID = 2652327633296064143L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String clienteId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int clienteId;
 	
 	private String nome;
 	private String sobrenome;
@@ -35,10 +35,10 @@ public class Cliente implements Serializable{
 	public void setEnderecoCobranca(EnderecoCobranca enderecoCobranca) {
 		this.enderecoCobranca = enderecoCobranca;
 	}
-	public String getClienteId() {
+	public int getClienteId() {
 		return clienteId;
 	}
-	public void setClienteId(String clienteId) {
+	public void setClienteId(int clienteId) {
 		this.clienteId = clienteId;
 	}
 

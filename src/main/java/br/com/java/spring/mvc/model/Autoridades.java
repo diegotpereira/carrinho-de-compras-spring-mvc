@@ -11,17 +11,17 @@ public class Autoridades implements Serializable{
 	private static final long serialVersionUID = 8734140534986494039L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String autoridadeId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int autoridadeId;
 	
 	private String emailId;
 	
 	private String autoridades;
 	
-	public String getAutoridadeId() {
+	public int getAutoridadeId() {
 		return autoridadeId;
 	}
-	public void setAutoridadeId(String autoridadeId) {
+	public void setAutoridadeId(int autoridadeId) {
 		this.autoridadeId = autoridadeId;
 	}
 	public String getEmailId() {
