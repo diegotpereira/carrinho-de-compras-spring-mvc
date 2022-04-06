@@ -16,12 +16,38 @@ public class Cliente implements Serializable{
 	private String sobrenome;
 	private String clienteTelefone;
 	
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "enderecoEntregaId")
+	private EnderecoEntrega enderecoEntrega;
+	
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "enderecoCobrancaId")
+	private EnderecoCobranca enderecoCobranca;
+
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "usuarioId")
+	private Usuario usuarios;
+	
+	public EnderecoCobranca getEnderecoCobranca() {
+		return enderecoCobranca;
+	}
+	public void setEnderecoCobranca(EnderecoCobranca enderecoCobranca) {
+		this.enderecoCobranca = enderecoCobranca;
+	}
 	public String getClienteId() {
 		return clienteId;
 	}
 	public void setClienteId(String clienteId) {
 		this.clienteId = clienteId;
 	}
+
+	public EnderecoEntrega getEnderecoEntrega() {
+		return enderecoEntrega;
+	}
+	public void setEnderecoEntrega(EnderecoEntrega enderecoEntrega) {
+		this.enderecoEntrega = enderecoEntrega;
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -40,6 +66,10 @@ public class Cliente implements Serializable{
 	public void setClienteTelefone(String clienteTelefone) {
 		this.clienteTelefone = clienteTelefone;
 	}
-
-	
+	public Usuario getUsuarios() {
+		return usuarios;
+	}
+	public void setUsuarios(Usuario usuarios) {
+		this.usuarios = usuarios;
+	}
 }

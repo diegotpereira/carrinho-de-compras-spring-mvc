@@ -2,16 +2,25 @@ package br.com.java.spring.mvc.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.*;
 
+import br.com.java.spring.mvc.dao.UsuarioDao;
 import br.com.java.spring.mvc.model.Usuario;
 import br.com.java.spring.mvc.service.*;
+
+import org.springframework.transaction.annotation.Transactional;
+
 @Service
 public class UsuarioServiceImpl implements UsuarioService{
 
-	@Override
+	@Autowired
+	private UsuarioDao usuarioDao;
+
+	@Transactional
 	public void addUsuario(Usuario usuario) {
 		// TODO Auto-generated method stub
+		usuarioDao.addUsuario(usuario);
 		
 	}
 

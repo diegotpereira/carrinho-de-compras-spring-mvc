@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:webflow-config="http://www.springframework.org/schema/webflow-config"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd 
+       http://www.springframework.org/schema/security 
+       http://www.springframework.org/schema/security/spring-security.xsd
+       http://www.springframework.org/schema/webflow-config 
+        http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd">
+
+	
+	<!-- propriedades do banco de dados DataSource -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.h2.Driver" />
+		<property name="url" value="jdbc:h2:tcp://localhost/~/carrinho_de_compras_spring_mvc" />
+		<property name="username" value="sa" />
+		<property name="password" value="" />
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+
+		<!-- Injeção de dependência de dataSource -->
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
+
+				<!-- hibernate mapeamento para banco de dados automaticamente -->
+				<!-- quando usamos create-drop em vez de update a tabela é criada automaticamente
+                     quando o servidor for executado depois disso, ele cairá quando o servidor parar -->
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+
+				<!-- se a consulta quer mostrar os dados no console -->
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+
+			</props>
+		</property>
+
+		<!-- pacotes para verificar o pacote de classes anotado de classes de entidade -->
+		<property name="annotatedClasses">
+			<list>
+				<value>br.com.java.spring.mvc.model.Autoridades</value>
+				<value>br.com.java.spring.mvc.model.EnderecoCobranca</value>
+				<value>br.com.java.spring.mvc.model.Cliente</value>
+				<value>br.com.java.spring.mvc.model.EnderecoEntrega</value>
+				<value>br.com.java.spring.mvc.model.Usuario</value>
+			</list>
+		</property>
+
+	</bean>
+
+	<!-- Um gerenciador de transações é a parte de um aplicativo que é responsável
+		para coordenar transações em um ou mais recursos. Na primavera
+		estrutura, o gerenciador de transações é efetivamente a raiz da transação
+		sistema. -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+		
+</beans>
