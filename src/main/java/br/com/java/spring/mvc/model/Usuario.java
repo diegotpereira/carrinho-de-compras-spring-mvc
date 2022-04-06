@@ -18,6 +18,16 @@ public class Usuario implements Serializable{
 	private String password;
 	private boolean ativado;
 	
+	@OneToOne(mappedBy = "usuarios")
+	private Cliente cliente;
+	
+	
+	public Cliente getCliente() {
+		return cliente;
+	}
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
 	public String getUsuarioId() {
 		return usuarioId;
 	}
@@ -42,8 +52,4 @@ public class Usuario implements Serializable{
 	public void setAtivado(boolean ativado) {
 		this.ativado = ativado;
 	}
-
-	
-
-	//@OneToOne(mappedBy="usuarios")
 }

@@ -13,7 +13,9 @@ public class Autoridades implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String autoridadeId;
+	
 	private String emailId;
+	
 	private String autoridades;
 	
 	public String getAutoridadeId() {

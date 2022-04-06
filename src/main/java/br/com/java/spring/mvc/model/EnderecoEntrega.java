@@ -1,10 +1,12 @@
 package br.com.java.spring.mvc.model;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "enderecoEntrega") // shippingAddress
-public class EnderecoEntrega {
+public class EnderecoEntrega implements Serializable{
 	
 	private static final long serialVersionUID = 7551999649936522523L;
 
@@ -21,12 +23,12 @@ public class EnderecoEntrega {
 	@OneToOne(mappedBy = "enderecoEntrega")
 	private Cliente cliente;
 
-	public String getEnderecoEntregaId() {
+	public String getEnderecoCobrancaId() {
 		return enderecoEntregaId;
 	}
 	
-	public void setEnderecoEntregaId(String enderecoEntregaId) {
-		this.enderecoEntregaId = enderecoEntregaId;
+	public void setEnderecoCobrancaId(String enderecoCobrancaId) {
+		this.enderecoEntregaId = enderecoCobrancaId;
 	}
 
 	public Cliente getCliente() {

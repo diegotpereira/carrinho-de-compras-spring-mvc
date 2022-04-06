@@ -1,12 +1,14 @@
 package br.com.java.spring.mvc.model;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "enderecoCobranca") //billingAddress
-public class EnderecoCobranca {
+public class EnderecoCobranca implements Serializable{
 
-	private static final long serialVersionUID = 7551999649936522523L;
+	private static final long serialVersionUID = 1028098616457762743L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,6 +22,14 @@ public class EnderecoCobranca {
 
 	@OneToOne(mappedBy = "enderecoCobranca")
 	private Cliente cliente;
+	
+	public Cliente getCliente() {
+		return cliente;
+	}
+	
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
 
 	public String getEnderecoCobrancaId() {
 		return enderecoCobrancaId;
@@ -27,14 +37,6 @@ public class EnderecoCobranca {
 	
 	public void setEnderecoCobrancaId(String enderecoCobrancaId) {
 		this.enderecoCobrancaId = enderecoCobrancaId;
-	}
-
-	public Cliente getCliente() {
-		return cliente;
-	}
-	
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
 	}
 
 	public String getEndereco() {
