@@ -24,22 +24,22 @@
             <body>
                 <jsp:include page="/WEB-INF/pagina/navbar.jsp" />
                 <div class="container" id="usuarioTabela" style="width: 1145px; margin-bottom: 180px;">
-                    <h2>Gerenciamento de UsuÃ¡rios</h2>
-                    <p>A lista de usuÃ¡rios em nosso banco de dados</p>
+                    <h2>Gerenciamento de Usuários</h2>
+                    <p>A lista de usuários em nosso banco de dados</p>
                     <table class="table table-hover" id="usuarioLista">
                         <thead>
                             <tr>
                                 <th>Id do UsuÃ¡rio</th>
                                 <th>Nome</th>
                                 <th>Sobrenome</th>
-                                <th>EndereÃ§o</th>
-                                <th>GÃªnero</th>
+                                <th>Endereço</th>
+                                <th>Gênero</th>
                                 <th>Estado</th>
                                 <th>Cidade</th>
-                                <th>NÃºmero do Telefone</th>
-                                <th>EndereÃ§o de Email</th>
+                                <th>Número do Telefone</th>
+                                <th>Endereço de Email</th>
                                 <th>Senha</th>
-                                <th>FunÃ§Ã£o</th>
+                                <th>Função</th>
                             </tr>
                         </thead>
                         <tbody>

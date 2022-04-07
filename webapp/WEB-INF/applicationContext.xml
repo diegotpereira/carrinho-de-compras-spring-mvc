@@ -31,7 +31,7 @@
 				<!-- hibernate mapeamento para banco de dados automaticamente -->
 				<!-- quando usamos create-drop em vez de update a tabela é criada automaticamente
                      quando o servidor for executado depois disso, ele cairá quando o servidor parar -->
-				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
 
 				<!-- se a consulta quer mostrar os dados no console -->
 				<prop key="hibernate.show_sql">true</prop>
@@ -51,6 +51,7 @@
 				<value>br.com.java.spring.mvc.model.EnderecoEntrega</value>
 				<value>br.com.java.spring.mvc.model.Usuario</value>
 				<value>br.com.java.spring.mvc.model.Produto</value>
+				<value>br.com.java.spring.mvc.model.Consultas</value>
 			</list>
 		</property>
 

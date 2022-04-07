@@ -1,11 +1,24 @@
 package br.com.java.spring.mvc.controller;
 
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import br.com.java.spring.mvc.model.Consultas;
+import br.com.java.spring.mvc.service.ConsultasService;
 
 @Controller
 public class HomeControle {
+
+	@Autowired
+	private ConsultasService consultasService;
 
 	@RequestMapping("/")
 	public String apresentacao() {
@@ -16,7 +29,7 @@ public class HomeControle {
 	@RequestMapping("/entrar")
 	public String entrar(String erro, Model model) {
 		if (erro != null) {
-			model.addAttribute("erro", "Nome de usuário ou senha inválidos");
+			model.addAttribute("erro", "Nome de usuï¿½rio ou senha invï¿½lidos");
 		}
 
 		return "entrar";
@@ -28,9 +41,20 @@ public class HomeControle {
 		return "sobre";
 	}
 	
-	@RequestMapping("/contato")
-	public String contato() {
+	@RequestMapping("/contatos")
+	public ModelAndView contato() {
+		Consultas consulta = new Consultas();
+		return new ModelAndView("contatos", "contato", consulta);
+	}
+	@RequestMapping(value = "/contatos", method = RequestMethod.POST)
+	public String addConsulta(@Valid @ModelAttribute(value = "contato") Consultas consulta, Model model, BindingResult result) {
+		if(result.hasErrors())
 
-		return "contato";
+		return "contatos";
+
+		consultasService.addConsulta(consulta);
+		model.addAttribute("consulta Sucesso", "Obrigado, Sua Mensagem armazenada em nosso Servidor entraremos em contato atravÃ©s do Correio correspondente");
+
+		return "entrar";
 	}
 }
