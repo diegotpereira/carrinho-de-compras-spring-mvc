@@ -116,11 +116,11 @@
                                             <div class="row">
                                                 <div class="col-sm-6 form-group">
                                                     <form:label path="">Senha</form:label>
-                                                    <form:input type="password" placeholder="****************" class="form-control" id="senha" path=""></form:input>
+                                                    <form:input type="password" placeholder="****************" class="form-control" id="senha" path="usuarios.password"></form:input>
                                                 </div>
                                                 <div class="col-sm-6 form-group">
                                                     <form:label path="usuarios.password">Confirmar Senha</form:label>
-                                                    <input type="password" placeholder="*****************" class="form-control" id="confirmasenha" path="usuarios.password" />
+                                                    <input type="password" placeholder="*****************" class="form-control" id="confirmasenha" />
                                                 </div>
                                             </div>
                                             <div class="form-actions">
