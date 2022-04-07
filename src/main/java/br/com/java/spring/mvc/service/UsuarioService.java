@@ -6,7 +6,7 @@ import br.com.java.spring.mvc.model.*;
 
 public interface UsuarioService {
 	
-	List<Usuario> getTodosUsuarios();
+	public List<Usuario> getTodosUsuarios();
 
 	void deletarUsuario(int usuarioId);
 

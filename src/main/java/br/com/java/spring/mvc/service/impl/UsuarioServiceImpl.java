@@ -30,10 +30,10 @@ public class UsuarioServiceImpl implements UsuarioService{
 		
 	}
 
-	@Override
+	@Transactional
 	public List<Usuario> getTodosUsuarios() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return usuarioDao.getTodosUsuarios();
 	}
 
 	@Override

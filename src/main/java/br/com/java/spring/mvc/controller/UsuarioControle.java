@@ -1,5 +1,7 @@
 package br.com.java.spring.mvc.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import br.com.java.spring.mvc.model.EnderecoCobranca;
 import br.com.java.spring.mvc.model.EnderecoEntrega;
 import br.com.java.spring.mvc.model.Usuario;
 import br.com.java.spring.mvc.service.ClienteService;
+import br.com.java.spring.mvc.service.UsuarioService;
 
 @Controller
 public class UsuarioControle {
@@ -30,6 +33,9 @@ public class UsuarioControle {
 	public void setClienteService(ClienteService clienteService) {
 		this.clienteService = clienteService;
 	}
+
+	@Autowired
+	private UsuarioService usuarioService;
 
 	@RequestMapping(value = "/cliente/registrar")
 	public ModelAndView getRegistrarForm() {
@@ -56,6 +62,12 @@ public class UsuarioControle {
 			model.addAttribute("registradoSucesso", "Registrado com Sucesso. Faça login usando nome de usuário e senha");
 
 			return "entrar";
-		
+	}
+
+	@RequestMapping(value="/getTodosUsuarios")
+	public ModelAndView getTodosUsuarios() {
+		List<Usuario> usuarios = usuarioService.getTodosUsuarios();
+
+		return new ModelAndView("usuarioLista", "usuarios", usuarios);
 	}
 }

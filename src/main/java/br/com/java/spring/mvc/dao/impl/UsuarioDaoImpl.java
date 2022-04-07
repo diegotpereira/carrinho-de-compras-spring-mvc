@@ -17,10 +17,27 @@ public class UsuarioDaoImpl implements UsuarioDao{
 	@Autowired
 	private SessionFactory sessionFactory;
 
+	// isso criará uma sessionFactory para esta classe
+	// existe apenas uma sessionFactory que deve ser criada para as aplicações
+	// podemos criar várias sessões para uma sessionFactory
+	// cada sessão pode fazer algumas funções
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
 	@Override
 	public List<Usuario> getTodosUsuarios() {
-		// TODO Auto-generated method stub
-		return null;
+		Session session = sessionFactory.openSession();
+
+		List<Usuario> usuarios = session.createCriteria(Usuario.class).list();
+
+		System.out.println(usuarios);
+		session.close();
+		return usuarios;
 	}
 
 	@Override

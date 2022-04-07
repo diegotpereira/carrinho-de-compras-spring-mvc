@@ -3,7 +3,7 @@
 
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-        <jsp:include page="/WEB-INF/pagina/navbar.jsp" />
+        
         <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
         <html>
 
@@ -24,6 +24,7 @@
         </head>
 
         <body>
+        <jsp:include page="/WEB-INF/pagina/navbar.jsp" />
             <div ng-app="meuApp">
                 <div class="container" style="width: 829px;">
                     <h2>Detalhe do Produto</h2>
@@ -67,7 +68,8 @@
                     </table>
                 </div>
             </div>
+            <jsp:include page="/WEB-INF/pagina/footer.jsp" />
         </body>
 
         </html>
-        <jsp:include page="/WEB-INF/pagina/footer.jsp" />
+        
