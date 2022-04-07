@@ -40,7 +40,7 @@
                         <ul class="nav navbar-nav">
                             <li><a href=" <c:url value="/index1" />">Home</a></li>
                             <li><a href=" <c:url value="/getTodosProdutos" />">Lista de Produtos</a></li>
-                            <li><a href=" <c:url value="/sobre" />">Sobre Nï¿½s</a></li>
+                            <li><a href=" <c:url value="/sobre" />">Sobre Nós</a></li>
                             <li><a href=" <c:url value="/contato" />">Contato</a></li>
                             <li><a href=" <c:url value="/admin/produto/addProduto" />">Add Produto</a></li>
                         </ul>

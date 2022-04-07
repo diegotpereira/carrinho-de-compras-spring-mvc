@@ -22,6 +22,7 @@ import br.com.java.spring.mvc.model.Produto;
 import br.com.java.spring.mvc.service.ProdutoService;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -89,5 +90,12 @@ public class ProdutoControle {
 		List<Produto> produtos = produtoService.getTodosProdutos();
 
 		return new ModelAndView("produtoLista", "produtos", produtos);
+	}
+	// isso é usado para obter o produto por productId
+	@RequestMapping("getProdutoPorId/{produtoId}")
+	public ModelAndView getProdutoPorId(@PathVariable(value="produtoId") int produtoId) {
+		Produto produto = produtoService.getProdutoPorId(produtoId);
+
+		return new ModelAndView("produtoPagina", "produtoObj", produto);
 	}
 }

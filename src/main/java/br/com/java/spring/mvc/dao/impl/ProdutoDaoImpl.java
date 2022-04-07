@@ -50,8 +50,13 @@ public class ProdutoDaoImpl implements ProdutoDao{
 
 	@Override
 	public Produto getProdutoPorId(int produtoId) {
-		// TODO Auto-generated method stub
-		return null;
+		// Lendo os registros da tabela
+		Session session = sessionFactory.openSession();
+
+		// select * from Product where isbn=i
+		Produto produto = (Produto) session.get(Produto.class, produtoId);
+		session.close();
+		return produto;
 	}
 
 	@Override
