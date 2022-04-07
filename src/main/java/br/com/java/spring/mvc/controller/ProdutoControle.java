@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -15,6 +16,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.servlet.ModelAndView;
 
 import br.com.java.spring.mvc.model.Produto;
 import br.com.java.spring.mvc.service.ProdutoService;
@@ -81,5 +83,11 @@ public class ProdutoControle {
 		
 		return "redirect:/getAllProdutos";
 	}
-	
+	//Exibir Produtos
+	@RequestMapping("/getTodosProdutos")
+	public ModelAndView getTodosProdutos() {
+		List<Produto> produtos = produtoService.getTodosProdutos();
+
+		return new ModelAndView("produtoLista", "produtos", produtos);
+	}
 }

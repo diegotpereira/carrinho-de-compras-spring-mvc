@@ -32,8 +32,20 @@ public class ProdutoDaoImpl implements ProdutoDao{
 
 	@Override
 	public List<Produto> getTodosProdutos() {
-		// TODO Auto-generated method stub
-		return null;
+		// Lendo os registros da tabela
+		Session session = sessionFactory.openSession();
+
+		List<Produto> produtos = session.createCriteria(Produto.class).list();
+
+		System.out.println("---Lista de Produtos---");
+		System.out.println(produtos);
+
+		// session.flush é usado para limpar o cache na sessão
+		session.flush();
+
+		// ele fechará a sessão específica após concluir o processo
+		session.close();
+		return produtos;
 	}
 
 	@Override

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.java.spring.mvc.dao.ProdutoDao;
 import br.com.java.spring.mvc.model.Produto;
@@ -15,10 +16,10 @@ public class ProdutoServiceImpl implements ProdutoService{
 	@Autowired
 	private ProdutoDao produtoDao;
 
-	@Override
+	@Transactional
 	public List<Produto> getTodosProdutos() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return produtoDao.getTodosProdutos();
 	}
 
 	@Override
