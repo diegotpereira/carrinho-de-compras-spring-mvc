@@ -50,6 +50,7 @@
 				<value>br.com.java.spring.mvc.model.Cliente</value>
 				<value>br.com.java.spring.mvc.model.EnderecoEntrega</value>
 				<value>br.com.java.spring.mvc.model.Usuario</value>
+				<value>br.com.java.spring.mvc.model.Produto</value>
 			</list>
 		</property>
 

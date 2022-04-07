@@ -43,6 +43,9 @@ public class Produto implements Serializable{
 	private MultipartFile produtoImagem;
 
 	// Construtor
+	public Produto() {
+	}
+
 	public Produto(int produtoId, String produtoCategoria, String produtoDescricao, String produtoFabricante,
 			String produtoNome, double produtoPreco, String unidadeEstoque) {
 		this.produtoId = produtoId;
