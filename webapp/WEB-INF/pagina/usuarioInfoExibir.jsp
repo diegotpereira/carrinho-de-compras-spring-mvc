@@ -16,11 +16,17 @@
             <!-- CSS  -->
             <script src="${pageContext.request.contextPath}/resource/js/jquery.js"></script>
             <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
-            <title>Shop Online</title>
+
+            <title>Informação do Usuário</title>
         </head>
 
         <body>
+            <jsp:include page="/WEB-INF/pagina/navbar.jsp" />
+            <h3>Olá: ${usuario.emailId}</h3>
 
+            Usuário Nome: <b>${usuario.emailId}</b> <br />
+
+            <jsp:include page="/WEB-INF/pagina/footer.jsp" />
         </body>
 
         </html>
