@@ -3,6 +3,8 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "cliente")
 public class Cliente implements Serializable{
@@ -28,6 +30,11 @@ public class Cliente implements Serializable{
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "usuarioId")
 	private Usuario usuarios;
+
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "carrinhoId")
+	@JsonIgnore
+	private Carrinho carrinho;
 	
 	public EnderecoCobranca getEnderecoCobranca() {
 		return enderecoCobranca;
@@ -57,6 +64,13 @@ public class Cliente implements Serializable{
 	}
 	public String getSobrenome() {
 		return sobrenome;
+	}
+	
+	public Carrinho getCarrinho() {
+		return carrinho;
+	}
+	public void setCarrinho(Carrinho carrinho) {
+		this.carrinho = carrinho;
 	}
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;

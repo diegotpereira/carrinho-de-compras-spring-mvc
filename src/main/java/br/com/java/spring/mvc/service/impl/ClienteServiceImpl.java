@@ -31,7 +31,7 @@ public class ClienteServiceImpl implements ClienteService{
 	}
 
 	@Override
-	public Cliente getClientePorId(String emailId) {
+	public Cliente getClientePorEmailId(String emailId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

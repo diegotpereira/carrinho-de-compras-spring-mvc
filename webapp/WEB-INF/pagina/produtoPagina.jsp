@@ -3,7 +3,7 @@
 
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-        
+
         <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
         <html>
 
@@ -24,7 +24,7 @@
         </head>
 
         <body>
-        <jsp:include page="/WEB-INF/pagina/navbar.jsp" />
+            <jsp:include page="/WEB-INF/pagina/navbar.jsp" />
             <div ng-app="meuApp">
                 <div class="container" style="width: 829px;">
                     <h2>Detalhe do Produto</h2>
@@ -33,7 +33,7 @@
                             <tr>
                                 <td>Imagem do Produto</td>
                                 <td>
-                                    <img src="<c:url value="/resource/imagens/produtos/${produtoObj.produtoId}.jpg"/>" width="40%" alt="${produtoObj.produtoNome}" />
+                                    <img src="<c:url value=" /resource/imagens/produtos/${produtoObj.produtoId}.jpg "/>" width="40%" alt="${produtoObj.produtoNome}" />
                                 </td>
                             </tr>
                             <tr>
@@ -64,6 +64,17 @@
                                 <td>Unidades em Estoque</td>
                                 <td>${produtoObj.unidadeEstoque}</td>
                             </tr>
+                            <tr>
+                                <td>Adicionar no Carrinho:</td>
+                                <td>
+                                    <c:url value="/carrinho/add/${produtoObj.produtoId}" var="addCarrinho"></c:url>
+                                    <div ng-controller="meuControle">
+                                        <a href="#" ng-click="addNoCarrinho(${produtoObj.produtoId})" class="btn btn-info" style="margin-top: 0px; width: 150px; float: left; margin-right: 31px;">
+                                            <span class="glyphicon glyphicon-arrow-left"></span>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -72,4 +83,3 @@
         </body>
 
         </html>
-        

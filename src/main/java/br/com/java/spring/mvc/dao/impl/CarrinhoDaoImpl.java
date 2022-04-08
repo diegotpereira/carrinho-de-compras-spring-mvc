@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.java.spring.mvc.dao.CarrinhoDao;
 import br.com.java.spring.mvc.model.Carrinho;
+import br.com.java.spring.mvc.service.ClientePedidoService;
 
 @Repository
 @Transactional
@@ -17,6 +18,9 @@ public class CarrinhoDaoImpl implements CarrinhoDao{
 
 	@Autowired
 	private SessionFactory sessionFactory;
+
+	@Autowired
+	private ClientePedidoService clientePedidoService;
 
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
@@ -53,6 +57,9 @@ public class CarrinhoDaoImpl implements CarrinhoDao{
 	public void atualizar(Carrinho carrinho) {
 		
 		int carrinhoId = carrinho.getCarrinhoId();
+
+		double valorTotal = clientePedidoService.getClientePedidoValorTotal(carrinhoId);
+		carrinho.setPrecoTotal(valorTotal);
 		
 		Session session = sessionFactory.openSession();
 		session.saveOrUpdate(carrinho);

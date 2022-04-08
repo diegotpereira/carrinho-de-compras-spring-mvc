@@ -14,6 +14,7 @@ public class Usuario implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int usuarioId;
 
+	private String usuarioNome;
 	private String emailId;
 	private String password;
 	private boolean ativado;
@@ -27,6 +28,13 @@ public class Usuario implements Serializable{
 	}
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
+	}
+	
+	public String getUsuarioNome() {
+		return usuarioNome;
+	}
+	public void setUsuarioNome(String usuarioNome) {
+		this.usuarioNome = usuarioNome;
 	}
 	public int getUsuarioId() {
 		return usuarioId;

@@ -14,7 +14,7 @@ public class CarrinhoItem implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String carrinhoItemId;
+	private int carrinhoItemId;
 
 	private int qualidade;
 
@@ -29,11 +29,11 @@ public class CarrinhoItem implements Serializable{
 	@JsonIgnore
 	private Carrinho carrinho;
 
-	public String getCarrinhoItemId() {
+	public int getCarrinhoItemId() {
 		return carrinhoItemId;
 	}
 
-	public void setCarrinhoItemId(String carrinhoItemId) {
+	public void setCarrinhoItemId(int carrinhoItemId) {
 		this.carrinhoItemId = carrinhoItemId;
 	}
 
