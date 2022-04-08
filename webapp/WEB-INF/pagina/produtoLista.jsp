@@ -4,6 +4,7 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
         <%@ page isELIgnored="false"%>
             <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+            <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security"%>
             <html>
 
             <head>
@@ -39,7 +40,11 @@
                                 <th>Quantidade em Estoque</th>
                                 <th>Descrição</th>
                                 <th>Fabricante</th>
-
+                                <th>
+                                    Exibir
+                                    <security:authorize access="hasAnyRole('FUNCAO_USUARIO')">
+                                    </security:authorize>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>

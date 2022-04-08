@@ -49,7 +49,7 @@
                             <form name="loginForm" action="<c:url value="/j_spring_security_check"/>" method="post">
                                 <fieldset>
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="E-mail" name="j_usuarionome" />
+                                        <input type="email" class="form-control" placeholder="E-mail" name="j_username" />
                                     </div>
                                     <div class="form-group">
                                         <input type="password" class="form-control" placeholder="Senha" name="j_password" />
