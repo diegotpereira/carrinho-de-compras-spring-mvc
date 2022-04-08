@@ -20,10 +20,10 @@ public class HomeControle {
 	@Autowired
 	private ConsultasService consultasService;
 
-	@RequestMapping("/")
+	@RequestMapping({"/index", "/index1"})
 	public String apresentacao() {
 		
-		return "index";
+		return "index1";
 	}
 
 	@RequestMapping("/entrar")
@@ -53,7 +53,7 @@ public class HomeControle {
 		return "contatos";
 
 		consultasService.addConsulta(consulta);
-		model.addAttribute("consulta Sucesso", "Obrigado, Sua Mensagem armazenada em nosso Servidor entraremos em contato através do Correio correspondente");
+		model.addAttribute("consultaSucesso", "Obrigado, Sua Mensagem armazenada em nosso Servidor entraremos em contato através do Correio correspondente");
 
 		return "entrar";
 	}

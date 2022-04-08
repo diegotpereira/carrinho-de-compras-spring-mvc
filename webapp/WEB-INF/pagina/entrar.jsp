@@ -12,11 +12,24 @@
             <!-- CSS  -->
             <link href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/resource/css/overall.css" rel="stylesheet" type="text/css">
+            <link href="${pageContext.request.contextPath}/resource/css/header.css" rel="stylesheet" type="text/css">
 
             <!-- CSS  -->
             <script src="${pageContext.request.contextPath}/resource/js/jquery.js"></script>
             <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
+            <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
+
             <title>Shop Online</title>
+
+            <style type="text/css">
+                @media ( min-width: 1200px).container {
+                    width: 1300 px;
+                }
+                
+                @media ( min-width: 992px).col-md-4 {
+                    margin-left: 330px;
+                }
+            </style>
         </head>
 
         <body>
@@ -28,14 +41,18 @@
                         <div class="panel-heading">
                             <h3 class="panel-title" align="center">Entrar</h3>
                         </div>
+                        <!--será exibido após o formulário contato for registrado com sucesso-->
                         <div class="panel-body">
-                            <form name="loginForm">
+                            <c:if test="${!empty consultaSucesso}">
+                                <div class="error" style="color: #ff0000">${consultaSucesso}</div>
+                            </c:if>
+                            <form name="loginForm" action="<c:url value="/j_spring_security_check"/>" method="post">
                                 <fieldset>
                                     <div class="form-group">
-                                        <input type="email" class="form-group" placeholder="E-mail" name="j_usuarionome" />
+                                        <input type="email" class="form-control" placeholder="E-mail" name="j_usuarionome" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-group" placeholder="Senha" name="j_password" />
+                                        <input type="password" class="form-control" placeholder="Senha" name="j_password" />
                                     </div>
                                     <div class="checkbox">
                                         <div class="error" style="color: #ff0000"></div>

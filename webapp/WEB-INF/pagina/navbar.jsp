@@ -34,15 +34,15 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-                        <a class="navbar-brand" href="<c:url value=" " />">Shop Online</a>
+                        <a class="navbar-brand" href="<c:url value="index1"/>">Shop Online</a>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
-                            <li><a href=" <c:url value="/index1"/>">Home</a></li>
-                            <li><a href=" <c:url value="/getTodosProdutos"/>">Lista de Produtos</a></li>
-                            <li><a href=" <c:url value="/sobre"/>">Sobre Nós</a></li>
-                            <li><a href=" <c:url value="/contatos"/>">Contato</a></li>
-                            <li><a href=" <c:url value="/admin/produto/addProduto"/>">Add Produto</a></li>
+                            <li><a href="<c:url value="/index1"/>">Home</a></li>
+                            <li><a href="<c:url value="/getTodosProdutos"/>">Lista de Produtos</a></li>
+                            <li><a href="<c:url value="/sobre"/>">Sobre Nós</a></li>
+                            <li><a href="<c:url value="/contatos"/>">Contato</a></li>
+                            <li><a href="<c:url value="/admin/produto/addProduto"/>">Add Produto</a></li>
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
@@ -64,21 +64,23 @@
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
-                            <li>
+                            <c:if test="${pageContext.request.userPrincipal.name==null}">
+                                 <li>
                                 <a href="<c:url value="/carrinho"/>">
                                     <span class="glyphicon glyphicon-shopping-cart"></span> Meu Carrinho
                                 </a>
-                            </li>
-                            <li>
-                                <a href="<c:url value="/cliente/registrar"/>">
-                                    <span class="glyphicon glyphicon-log-user"></span> Cadastre-se
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<c:url value="/entrar"/>">
-                                    <span class="glyphicon glyphicon-log-in"></span> Entrar
-                                </a>
-                            </li>
+	                            </li>
+	                            <li>
+	                                <a href="<c:url value="/cliente/registrar"/>">
+	                                    <span class="glyphicon glyphicon-log-user"></span> Cadastre-se
+	                                </a>
+	                            </li>
+	                            <li>
+	                                <a href="<c:url value="/entrar"/>">
+	                                    <span class="glyphicon glyphicon-log-in"></span> Entrar
+	                                </a>
+	                            </li>
+                            </c:if>
                         </ul>
                     </div>
                 </div>
