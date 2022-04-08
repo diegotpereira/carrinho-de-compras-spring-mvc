@@ -20,7 +20,7 @@ public class HomeControle {
 	@Autowired
 	private ConsultasService consultasService;
 
-	@RequestMapping({"/index", "/index1"})
+	@RequestMapping({"/", "/index1"})
 	public String apresentacao() {
 		
 		return "index1";

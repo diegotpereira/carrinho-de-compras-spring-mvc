@@ -5,6 +5,7 @@
 
 
         <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+        <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security"%>
         <html>
 
         <head>
@@ -49,7 +50,7 @@
                                 <td>${produtoObj.produtoCategoria}</td>
                             </tr>
                             <tr>
-                                <td>DescriÃ§Ã£o do Produto</td>
+                                <td>Descrição do Produto</td>
                                 <td>${produtoObj.produtoDescricao}</td>
                             </tr>
                             <tr>
@@ -57,7 +58,7 @@
                                 <td>${produtoObj.produtoFabricante}</td>
                             </tr>
                             <tr>
-                                <td>PreÃ§o do Produto</td>
+                                <td>Preço do Produto</td>
                                 <td>${produtoObj.produtoPreco}</td>
                             </tr>
                             <tr>
