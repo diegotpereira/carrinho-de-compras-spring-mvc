@@ -2,6 +2,7 @@ package br.com.java.spring.mvc.dao.impl;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import br.com.java.spring.mvc.dao.ClienteDao;
 import br.com.java.spring.mvc.model.Autoridades;
 import br.com.java.spring.mvc.model.Cliente;
+import br.com.java.spring.mvc.model.Usuario;
 
 @Repository
 public class ClienteDaoImpl implements ClienteDao{
@@ -46,14 +48,22 @@ public class ClienteDaoImpl implements ClienteDao{
 
 	@Override
 	public List<Cliente> getTodosClientes() {
-		// TODO Auto-generated method stub
-		return null;
+		Session session = sessionFactory.openSession();
+		List<Cliente> clienteLista = session.createQuery("from Cliente").list();
+
+		return clienteLista;
 	}
 
 	@Override
 	public Cliente getClientePorEmailId(String emailId) {
-		// TODO Auto-generated method stub
-		return null;
+		Session session = sessionFactory.openSession();
+		Query query = session.createQuery("from Usuario where emailId =?");
+		query.setString(0, emailId);
+
+		Usuario usuarios = (Usuario)query.uniqueResult();
+		Cliente cliente = usuarios.getCliente();
+
+		return cliente;
 	}
 
 }

@@ -16,6 +16,14 @@ public class ProdutoServiceImpl implements ProdutoService{
 	@Autowired
 	private ProdutoDao produtoDao;
 
+	public ProdutoDao getProdutoDao() {
+		return produtoDao;
+	}
+
+	public void setProdutoDao(ProdutoDao produtoDao) {
+		this.produtoDao = produtoDao;
+	}
+
 	@Transactional
 	public List<Produto> getTodosProdutos() {
 		

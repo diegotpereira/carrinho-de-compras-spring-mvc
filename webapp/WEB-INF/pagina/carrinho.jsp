@@ -17,6 +17,8 @@
             <!-- CSS  -->
             <script src="${pageContext.request.contextPath}/resource/js/jquery.js"></script>
             <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
+            <script src="${pageContext.request.contextPath}/resource/js/produtoControle.js"></script>
+            
             <title>Shop Online</title>
         </head>
 
@@ -46,7 +48,7 @@
                                 <tr>
                                     <th>Nome do Produto</th>
                                     <th>Quantidade</th>
-                                    <th>PreÃ§o</th>
+                                    <th>Preço</th>
                                     <th>Valor Total</th>
                                 </tr>
                             </thead>

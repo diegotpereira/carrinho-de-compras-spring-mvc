@@ -84,6 +84,7 @@ public class ProdutoControle {
 		
 		return "redirect:/getAllProdutos";
 	}
+	
 	//Exibir Produtos
 	@RequestMapping("/getTodosProdutos")
 	public ModelAndView getTodosProdutos() {
@@ -91,6 +92,7 @@ public class ProdutoControle {
 
 		return new ModelAndView("produtoLista", "produtos", produtos);
 	}
+	
 	// isso é usado para obter o produto por productId
 	@RequestMapping("getProdutoPorId/{produtoId}")
 	public ModelAndView getProdutoPorId(@PathVariable(value="produtoId") int produtoId) {

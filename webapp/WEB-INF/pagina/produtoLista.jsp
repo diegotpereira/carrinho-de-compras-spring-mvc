@@ -45,7 +45,7 @@
                                             <security:authorize access="hasAnyRole('FUNCAO_USUARIO')">
                                                 / Add Carrinho
                                             </security:authorize>
-                                            <!--visualizaçõess apenas para o administrador-->
+                                            <!--visualizações apenas para o administrador-->
                                             <security:authorize access="hasAnyRole('FUNCAO_ADMIN')">
                                                 / Editar/Deletar
                                             </security:authorize>

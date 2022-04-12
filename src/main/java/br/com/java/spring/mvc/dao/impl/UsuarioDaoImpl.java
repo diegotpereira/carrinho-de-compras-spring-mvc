@@ -57,8 +57,16 @@ public class UsuarioDaoImpl implements UsuarioDao{
 
 	@Override
 	public Usuario getUsuarioPorId(int usuarioId) {
-		// TODO Auto-generated method stub
-		return null;
+		// Lendo os registros da tabela
+		Session session = sessionFactory.openSession();
+
+		
+		// selecione * do produto onde isbn=i
+		// se chamarmos o método get,Record não existe ele retornará null
+		// se chamarmos load, se o registro não existir ele lançará uma exceção
+		Usuario usuario = (Usuario) session.get(Usuario.class, usuarioId);
+		session.close();
+
+		return usuario;
 	}
-	
 }

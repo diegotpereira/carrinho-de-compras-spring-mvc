@@ -46,6 +46,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>br.com.java.spring.mvc.model.Autoridades</value>
+				<value>br.com.java.spring.mvc.model.Authorities</value>
 				<value>br.com.java.spring.mvc.model.Carrinho</value>
 				<value>br.com.java.spring.mvc.model.CarrinhoItem</value>
 				<value>br.com.java.spring.mvc.model.Cliente</value>
@@ -79,7 +80,7 @@
 		<security:intercept-url pattern="/carrinho/**"
 			access="permitAll"/>
 		<security:intercept-url pattern="/get*/**"
-			access="hasAnyRole('FUNCAO_ADMIN','FUNCAO_USUARIO')"/>
+			access="permitAll"/>
 		<security:intercept-url pattern="/admin*/**"
 			access="hasRole('FUNCAO_ADMIN')"/>
 		<security:form-login login-page="/entrar"

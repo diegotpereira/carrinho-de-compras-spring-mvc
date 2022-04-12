@@ -11,44 +11,44 @@ var app = angular.module("meuApp", []).controller(
                 });
         }
 
-        $scope.addToCart = function(productId) {
-            $http.put(BASE_PATH + "/cart/add/" + productId)
+        $scope.addNoCarrinho = function(produtoId) {
+            $http.put(BASE_PATH + "/carrinho/add/" + produtoId)
                 .success(function() {
-                    alert("Added Successfully");
+                    alert("Adicionado com sucesso");
                 })
         }
 
-        $scope.refreshCart = function() {
-            $http.get(BASE_PATH + "/cart/getCart/" +
-                $scope.cartId).success(function(data) {
+        $scope.atualizarCarrinho = function() {
+            $http.get(BASE_PATH + "/carrinho/getCarrinho/" +
+                $scope.carrinhoId).success(function(data) {
 
-                $scope.carts = data;
+                $scope.carrinhos = data;
             })
         }
 
-        $scope.getCart = function(cartId) {
-            $scope.cartId = cartId;
-            $scope.refreshCart(cartId);
+        $scope.getCarrinho = function(carrinhoId) {
+            $scope.carrinhoId = carrinhoId;
+            $scope.atualizarCarrinho(carrinhoId);
         }
-        $scope.removeFromCart = function(cartItemId) {
+        $scope.removerDoCarrinho = function(carrinhoItemId) {
             $http.put(BASE_PATH + "/cart/removeCartItem/" +
-                cartItemId).success(function() {
-                $scope.refreshCart();
+                carrinhoItemId).success(function() {
+                $scope.atualizarCarrinho();
             });
         }
 
-        $scope.clearCart = function() {
-            $http.put(BASE_PATH + "/cart/removeAllItems/" +
-                $scope.cartId).success(function() {
-                $scope.refreshCart();
+        $scope.limparCarrinho = function() {
+            $http.put(BASE_PATH + "/carrinho/removerTodosItens/" +
+                $scope.carrinhoId).success(function() {
+                $scope.atualizarCarrinho();
             });
         }
 
-        $scope.calculateGrandTotal = function() {
-            var grandTotal = 0.0;
-            for (var i = 0; i < $scope.carts.cartItem.length; i++)
-                grandTotal = grandTotal + $scope.carts.cartItem[i].price;
-            return grandTotal;
+        $scope.calcularValorTotal = function() {
+            var valorTotal = 0.0;
+            for (var i = 0; i < $scope.carrinhos.carrinhoItem.length; i++)
+                valorTotal = valorTotal + $scope.carrinhos.carrinhoItem[i].preco;
+            return valorTotal;
 
         }
     });

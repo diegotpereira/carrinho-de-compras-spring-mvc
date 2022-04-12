@@ -44,7 +44,7 @@
                         <!--será exibido após o formulário contato for registrado com sucesso-->
                         <div class="panel-body">
                             <c:if test="${!empty consultaSucesso}">
-                                <div class="error" style="color: #ff0000">${consultaSucesso}</div>
+                                <div class="error" style="color: #ff0000;">${consultaSucesso}</div>
                             </c:if>
                             <form name="loginForm" action="<c:url value="/j_spring_security_check"/>" method="post">
                                 <fieldset>
@@ -55,7 +55,7 @@
                                         <input type="password" class="form-control" placeholder="Senha" name="j_password" />
                                     </div>
                                     <div class="checkbox">
-                                        <div class="error" style="color: #ff0000"></div>
+                                        <div class="error" style="color: #ff0000;"></div>
                                     </div>
                                     <div id="button">
                                         <button type="submit" class="btn btn-sm btn-success" style="margin-right: 79px; margin-left: 60px;">
