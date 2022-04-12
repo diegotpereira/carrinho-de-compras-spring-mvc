@@ -48,21 +48,23 @@
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
-                            <li>
+                            <c:if test="${!empty pageContext.request.userPrincipal.name}">
+                                 <li>
                                 <a href="<c:url value="/"/>">
                                     <span class="glyphicon glyphicon-shopping-user"></span> Bem vindo
                                 </a>
-                            </li>
-                            <li>
-                                <a href="<c:url value="/carrinho"/>">
-                                    <span class="glyphicon glyphicon-shopping-cart"></span> Carrinho
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<c:url value="/sair"/>">
-                                    <span class="glyphicon glyphicon-log-out"></span> Sair
-                                </a>
-                            </li>
+	                            </li>
+	                            <li>
+	                                <a href="<c:url value="/carrinho"/>">
+	                                    <span class="glyphicon glyphicon-shopping-cart"></span> Carrinho
+	                                </a>
+	                            </li>
+	                            <li>
+	                                <a href="<c:url value="/sair"/>">
+	                                    <span class="glyphicon glyphicon-log-out"></span> Sair
+	                                </a>
+	                            </li>	
+                            </c:if>
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
