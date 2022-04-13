@@ -50,15 +50,17 @@
                                 <ul class="nav navbar-nav navbar-right">
                                     <c:if test="${!empty pageContext.request.userPrincipal.name}">
                                         <li>
-                                            <a href="<c:url value="/"/>">
+                                            <a href="<c:url value="/index1"/>">
                                                 <span class="glyphicon glyphicon-shopping-user"></span> Bem vindo
                                             </a>
                                         </li>
+                                        <security:authorize access="hasRole('FUNCAO_USUARIO')">
                                         <li>
-                                            <a href="<c:url value="/carrinho"/>">
-                                                <span class="glyphicon glyphicon-shopping-cart"></span> Carrinho
+                                            <a href="<c:url value="/carrinho/getCarrinhoPorId"/>">
+                                                <span class="glyphicon glyphicon-shopping-cart"></span> Meu Carrinho
                                             </a>
                                         </li>
+                                        </security:authorize>
                                         <li>
                                             <a href="<c:url value="/sair"/>">
                                                 <span class="glyphicon glyphicon-log-out"></span> Sair

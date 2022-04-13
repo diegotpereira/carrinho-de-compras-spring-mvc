@@ -50,7 +50,7 @@
                                     <td>${produtoObj.produtoCategoria}</td>
                                 </tr>
                                 <tr>
-                                    <td>Descriï¿½ï¿½o do Produto</td>
+                                    <td>Descrição do Produto</td>
                                     <td>${produtoObj.produtoDescricao}</td>
                                 </tr>
                                 <tr>
@@ -58,7 +58,7 @@
                                     <td>${produtoObj.produtoFabricante}</td>
                                 </tr>
                                 <tr>
-                                    <td>Preï¿½o do Produto</td>
+                                    <td>Preço do Produto</td>
                                     <td>${produtoObj.produtoPreco}</td>
                                 </tr>
                                 <tr>
