@@ -8,6 +8,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import br.com.java.spring.mvc.model.Carrinho;
@@ -67,9 +68,10 @@ public class CarrinhoItemControle {
 		this.produtoService = produtoService;
 	}
 
-	@RequestMapping("/carrinho/add/{produtoId}")
+	@RequestMapping(value ="/carrinho/add/{produtoId}", method = RequestMethod.POST)
 	@ResponseStatus(value = HttpStatus.NO_CONTENT)
 	public void addCarrinhoItem(@PathVariable(value = "produtoId") int produtoId) {
+		System.out.println("Chegou no controle");
 		Usuario usuario = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		String emailId = usuario.getUsuarioNome();
 		Cliente cliente = clienteService.getClientePorEmailId(emailId);

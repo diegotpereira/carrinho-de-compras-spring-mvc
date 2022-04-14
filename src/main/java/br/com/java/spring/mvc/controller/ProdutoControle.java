@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class ProdutoControle {
@@ -40,9 +41,9 @@ public class ProdutoControle {
         this.produtoService = produtoService;
     }
 
-	// Configuração para MultiPartResolver
-	// O resolvedor de várias partes é para fazer upload de imagens e outras mídias
-	// tamanho máximo do upload é para o tamanho da imagem não deve ser máximo que 10240000
+	// Configura��o para MultiPartResolver
+	// O resolvedor de v�rias partes é para fazer upload de imagens e outras m�dias
+	// tamanho m�ximo do upload é para o tamanho da imagem n�o deve ser m�ximo que 10240000
     @Bean
 	public MultipartResolver multipartResolver() {
 		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
@@ -60,8 +61,8 @@ public class ProdutoControle {
 	}
 	@RequestMapping(value="/admin/produto/addProduto", method=RequestMethod.POST)
 	public String addProduto(@Valid @ModelAttribute(value = "produtoFormObj") Produto produto, BindingResult result) {
-		// Resultado de vinculação é usado se o formulário tiver algum erro, ele será
-        // redireciona para a mesma página sem executar nenhuma função
+		// Resultado de vincula��o é usado se o formul�rio tiver algum erro, ele ser�
+        // redireciona para a mesma página sem executar nenhuma fun��o
 		if (result.hasErrors()) 
 			
 			return "addProduto";
@@ -99,5 +100,13 @@ public class ProdutoControle {
 		Produto produto = produtoService.getProdutoPorId(produtoId);
 
 		return new ModelAndView("produtoPagina", "produtoObj", produto);
+	}
+	@RequestMapping("/getProdutosLista")
+	public @ResponseBody List<Produto> getProdutosListaInJson() {
+		return produtoService.getTodosProdutos();
+	}
+	@RequestMapping("/produtoListaAngular")
+	public String getProdutos() {
+		return "produtoListaAngular";
 	}
 }

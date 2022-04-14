@@ -6,9 +6,22 @@
         <html lang="pt-br">
 
         <head>
-            <meta charset="UTF-8">
+             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--             <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            
+            <!-- CSS  -->
+                <link href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+                <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+				<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+            <!-- CSS  -->
+	            <script src="${pageContext.request.contextPath}/resource/js/jquery.js"></script>
+	            <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
+	      
+	            
             <title>Document</title>
         </head>
 

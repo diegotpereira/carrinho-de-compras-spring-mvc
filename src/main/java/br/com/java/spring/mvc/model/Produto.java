@@ -14,7 +14,7 @@ public class Produto implements Serializable{
 	private static final long serialVersionUID = 5186013952828648626L;
 
 	@Id
-	@Column(name = "id")
+	@Column(name = "Id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int produtoId;
 
@@ -28,7 +28,7 @@ public class Produto implements Serializable{
 	private String produtoFabricante;
 
 	@NotEmpty(message = "Nome do Produto é obrigatório")
-	@Column(name = "name")
+	@Column(name = "nome")
 	private String produtoNome;
 
 	@NotNull(message = "Por favor, forneça algum preço")

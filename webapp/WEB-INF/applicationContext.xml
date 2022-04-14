@@ -82,7 +82,7 @@
 		<security:intercept-url pattern="/get*/**"
 			access="permitAll"/>
 		<security:intercept-url pattern="/admin*/**"
-			access="hasRole('FUNCAO_ADMIN')"/>
+			access="permitAll"/>
 		<security:form-login login-page="/entrar"
 			login-processing-url="/j_spring_security_check"
 			username-parameter="j_username"

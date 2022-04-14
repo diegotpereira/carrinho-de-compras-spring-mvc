@@ -5,13 +5,14 @@ var app = angular.module("meuApp", []).controller(
         var BASE_PATH = "http://localhost:8080";
 
         $scope.getProdutoLista = function() {
-            $http.get(BASE_PATH + "/getProdutoLista")
+            $http.get(BASE_PATH + "/getProdutosLista")
                 .success(function(data) {
                     $scope.produtos = data;
                 });
         }
 
         $scope.addNoCarrinho = function(produtoId) {
+	        console.log(produtoId)
             $http.put(BASE_PATH + "/carrinho/add/" + produtoId)
                 .success(function() {
                     alert("Adicionado com sucesso");
