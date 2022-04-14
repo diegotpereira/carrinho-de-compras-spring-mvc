@@ -18,7 +18,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 	private UsuarioDao usuarioDao;
 
 	@Transactional
-	public void addUsuario(User usuario) {
+	public void addUsuario(Usuario usuario) {
 		// TODO Auto-generated method stub
 		usuarioDao.addUsuario(usuario);
 		
@@ -31,13 +31,13 @@ public class UsuarioServiceImpl implements UsuarioService{
 	}
 
 	@Transactional
-	public List<User> getTodosUsuarios() {
+	public List<Usuario> getTodosUsuarios() {
 		
 		return usuarioDao.getTodosUsuarios();
 	}
 
 	@Override
-	public User getUsuarioPorId(int usuarioId) {
+	public Usuario getUsuarioPorId(int usuarioId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

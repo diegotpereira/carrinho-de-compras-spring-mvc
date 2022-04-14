@@ -29,7 +29,7 @@ public class Cliente implements Serializable{
 
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "usuarioId")
-	private User usuarios;
+	private Usuario usuarios;
 
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "carrinhoId")
@@ -81,10 +81,10 @@ public class Cliente implements Serializable{
 	public void setClienteTelefone(String clienteTelefone) {
 		this.clienteTelefone = clienteTelefone;
 	}
-	public User getUsuarios() {
+	public Usuario getUsuarios() {
 		return usuarios;
 	}
-	public void setUsuarios(User usuarios) {
+	public void setUsuarios(Usuario usuarios) {
 		this.usuarios = usuarios;
 	}
 }

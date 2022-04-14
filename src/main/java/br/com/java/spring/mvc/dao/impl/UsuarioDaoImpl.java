@@ -30,10 +30,10 @@ public class UsuarioDaoImpl implements UsuarioDao{
 	}
 
 	@Override
-	public List<User> getTodosUsuarios() {
+	public List<Usuario> getTodosUsuarios() {
 		Session session = sessionFactory.openSession();
 
-		List<User> usuarios = session.createCriteria(User.class).list();
+		List<Usuario> usuarios = session.createCriteria(Usuario.class).list();
 
 		System.out.println(usuarios);
 		session.close();
@@ -47,7 +47,7 @@ public class UsuarioDaoImpl implements UsuarioDao{
 	}
 
 	@Override
-	public void addUsuario(User usuario) {
+	public void addUsuario(Usuario usuario) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
 		session.save(usuario);
@@ -56,7 +56,7 @@ public class UsuarioDaoImpl implements UsuarioDao{
 	}
 
 	@Override
-	public User getUsuarioPorId(int usuarioId) {
+	public Usuario getUsuarioPorId(int usuarioId) {
 		// Lendo os registros da tabela
 		Session session = sessionFactory.openSession();
 
@@ -64,7 +64,7 @@ public class UsuarioDaoImpl implements UsuarioDao{
 		// selecione * do produto onde isbn=i
 		// se chamarmos o método get,Record não existe ele retornará null
 		// se chamarmos load, se o registro não existir ele lançará uma exceção
-		User usuario = (User) session.get(User.class, usuarioId);
+		Usuario usuario = (Usuario) session.get(Usuario.class, usuarioId);
 		session.close();
 
 		return usuario;

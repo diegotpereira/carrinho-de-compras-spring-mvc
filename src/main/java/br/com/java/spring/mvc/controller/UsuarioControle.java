@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import br.com.java.spring.mvc.model.Cliente;
 import br.com.java.spring.mvc.model.EnderecoCobranca;
 import br.com.java.spring.mvc.model.EnderecoEntrega;
-import br.com.java.spring.mvc.model.User;
+import br.com.java.spring.mvc.model.Usuario;
 import br.com.java.spring.mvc.service.ClienteService;
 import br.com.java.spring.mvc.service.UsuarioService;
 
@@ -40,7 +40,7 @@ public class UsuarioControle {
 	@RequestMapping(value = "/cliente/registrar")
 	public ModelAndView getRegistrarForm() {
 		Cliente cliente = new Cliente();
-		User usuario = new User();
+		Usuario usuario = new Usuario();
 		EnderecoCobranca enderecoCobranca = new EnderecoCobranca();
 		EnderecoEntrega enderecoEntrega = new EnderecoEntrega();
 
@@ -66,7 +66,7 @@ public class UsuarioControle {
 
 	@RequestMapping(value="/getTodosUsuarios")
 	public ModelAndView getTodosUsuarios() {
-		List<User> usuarios = usuarioService.getTodosUsuarios();
+		List<Usuario> usuarios = usuarioService.getTodosUsuarios();
 
 		return new ModelAndView("usuarioLista", "usuarios", usuarios);
 	}
