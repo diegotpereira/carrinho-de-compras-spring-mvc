@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.*;
 
 import br.com.java.spring.mvc.dao.UsuarioDao;
-import br.com.java.spring.mvc.model.Usuario;
+import br.com.java.spring.mvc.model.*;
 import br.com.java.spring.mvc.service.*;
 
 import org.springframework.transaction.annotation.Transactional;
@@ -18,7 +18,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 	private UsuarioDao usuarioDao;
 
 	@Transactional
-	public void addUsuario(Usuario usuario) {
+	public void addUsuario(User usuario) {
 		// TODO Auto-generated method stub
 		usuarioDao.addUsuario(usuario);
 		
@@ -31,13 +31,13 @@ public class UsuarioServiceImpl implements UsuarioService{
 	}
 
 	@Transactional
-	public List<Usuario> getTodosUsuarios() {
+	public List<User> getTodosUsuarios() {
 		
 		return usuarioDao.getTodosUsuarios();
 	}
 
 	@Override
-	public Usuario getUsuarioPorId(int usuarioId) {
+	public User getUsuarioPorId(int usuarioId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -36,16 +36,16 @@
                                     <th>Id do Produto</th>
                                     <th>Categoria</th>
                                     <th>Nome do Produto</th>
-                                    <th>Preï¿½o do Produto</th>
+                                    <th>Preço do Produto</th>
                                     <th>Quantidade em Estoque</th>
-                                    <th>Descriï¿½ï¿½o</th>
+                                    <th>Descrição</th>
                                     <th>Fabricante</th>
                                     <th>
                                         Exibir
                                         <security:authorize>
                                             / Add Carrinho
                                         </security:authorize>
-                                        <!--visualizaï¿½ï¿½es apenas para o administrador-->
+                                        <!-- visualização apenas para o administrador-->
                                         <security:authorize access="hasAnyRole('FUNCAO_ADMIN')">
                                             / Editar/Deletar
                                         </security:authorize>
@@ -69,7 +69,7 @@
                                             <a href="getProdutoPorId/${prod.produtoId}" class="btn btn-info" role="button">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
-                                            <!--visualização apenas para o usuï¿½rio-->
+                                            <!--visualização apenas para o usuário-->
 <%--                                             <security:authorize> --%>
                                                 <a href="#" ng-click="addNoCarrinho(${prod.produtoId})" class="btn btn-primary" style="margin-left: 5px;">
                                                     <span class="glyphicon glyphicon-shopping-cart"></span>

@@ -5,17 +5,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
-
 import br.com.java.spring.mvc.model.Carrinho;
 import br.com.java.spring.mvc.model.CarrinhoItem;
 import br.com.java.spring.mvc.model.Cliente;
 import br.com.java.spring.mvc.model.Produto;
-import br.com.java.spring.mvc.model.Usuario;
 import br.com.java.spring.mvc.service.CarrinhoItemService;
 import br.com.java.spring.mvc.service.CarrinhoService;
 import br.com.java.spring.mvc.service.ClienteService;
@@ -68,12 +66,12 @@ public class CarrinhoItemControle {
 		this.produtoService = produtoService;
 	}
 
-	@RequestMapping(value ="/carrinho/add/{produtoId}", method = RequestMethod.POST)
+	@RequestMapping(value ="/carrinho/add/{produtoId}")
 	@ResponseStatus(value = HttpStatus.NO_CONTENT)
 	public void addCarrinhoItem(@PathVariable(value = "produtoId") int produtoId) {
 		System.out.println("Chegou no controle");
-		Usuario usuario = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		String emailId = usuario.getUsuarioNome();
+		User usuario = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		String emailId = usuario.getUsername();
 		Cliente cliente = clienteService.getClientePorEmailId(emailId);
 		System.out.println("Cliente: " + cliente.getUsuarios().getEmailId());
 

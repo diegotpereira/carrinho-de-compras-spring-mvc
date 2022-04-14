@@ -2,6 +2,7 @@ package br.com.java.spring.mvc.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.java.spring.mvc.model.Carrinho;
 import br.com.java.spring.mvc.model.Cliente;
-import br.com.java.spring.mvc.model.Usuario;
 import br.com.java.spring.mvc.service.CarrinhoService;
 import br.com.java.spring.mvc.service.ClienteService;
 
@@ -41,8 +41,8 @@ public class CarrinhoControle {
 
 	@RequestMapping("carrinho/getCarrinhoPorId")
 	public String getCarrinhoId(Model model) {
-		Usuario usuario = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		String emailId = usuario.getUsuarioNome();
+		User usuario = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		String emailId = usuario.getUsername();
 		Cliente cliente = clienteService.getClientePorEmailId(emailId);
 		model.addAttribute("carrinhoId", cliente.getCarrinho().getCarrinhoId());
 

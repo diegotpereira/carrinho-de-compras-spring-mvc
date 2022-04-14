@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import br.com.java.spring.mvc.dao.UsuarioDao;
-import br.com.java.spring.mvc.model.Usuario;
+import br.com.java.spring.mvc.model.*;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -30,10 +30,10 @@ public class UsuarioDaoImpl implements UsuarioDao{
 	}
 
 	@Override
-	public List<Usuario> getTodosUsuarios() {
+	public List<User> getTodosUsuarios() {
 		Session session = sessionFactory.openSession();
 
-		List<Usuario> usuarios = session.createCriteria(Usuario.class).list();
+		List<User> usuarios = session.createCriteria(User.class).list();
 
 		System.out.println(usuarios);
 		session.close();
@@ -47,7 +47,7 @@ public class UsuarioDaoImpl implements UsuarioDao{
 	}
 
 	@Override
-	public void addUsuario(Usuario usuario) {
+	public void addUsuario(User usuario) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
 		session.save(usuario);
@@ -56,7 +56,7 @@ public class UsuarioDaoImpl implements UsuarioDao{
 	}
 
 	@Override
-	public Usuario getUsuarioPorId(int usuarioId) {
+	public User getUsuarioPorId(int usuarioId) {
 		// Lendo os registros da tabela
 		Session session = sessionFactory.openSession();
 
@@ -64,7 +64,7 @@ public class UsuarioDaoImpl implements UsuarioDao{
 		// selecione * do produto onde isbn=i
 		// se chamarmos o método get,Record não existe ele retornará null
 		// se chamarmos load, se o registro não existir ele lançará uma exceção
-		Usuario usuario = (Usuario) session.get(Usuario.class, usuarioId);
+		User usuario = (User) session.get(User.class, usuarioId);
 		session.close();
 
 		return usuario;

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import br.com.java.spring.mvc.dao.ClienteDao;
 import br.com.java.spring.mvc.model.Autoridades;
 import br.com.java.spring.mvc.model.Cliente;
-import br.com.java.spring.mvc.model.Usuario;
+import br.com.java.spring.mvc.model.User;
 
 @Repository
 public class ClienteDaoImpl implements ClienteDao{
@@ -57,10 +57,10 @@ public class ClienteDaoImpl implements ClienteDao{
 	@Override
 	public Cliente getClientePorEmailId(String emailId) {
 		Session session = sessionFactory.openSession();
-		Query query = session.createQuery("from Usuario where emailId =?");
+		Query query = session.createQuery("from User where emailId =?");
 		query.setString(0, emailId);
 
-		Usuario usuarios = (Usuario)query.uniqueResult();
+		User usuarios = (User)query.uniqueResult();
 		Cliente cliente = usuarios.getCliente();
 
 		return cliente;

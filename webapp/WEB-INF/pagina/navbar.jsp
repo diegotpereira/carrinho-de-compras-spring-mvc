@@ -58,7 +58,7 @@
                                         <security:authorize access="hasRole('FUNCAO_USUARIO')">
                                         <li>
                                             <a href="<c:url value="/carrinho/getCarrinhoPorId"/>">
-                                                <span class="glyphicon glyphicon-shopping-cart"></span> Meu Carrinho
+                                                <span class="glyphicon glyphicon-shopping-cart"></span> Carrinho
                                             </a>
                                         </li>
                                         </security:authorize>
@@ -73,7 +73,7 @@
                                 <ul class="nav navbar-nav navbar-right">
                                     <c:if test="${pageContext.request.userPrincipal.name==null}">
                                         <li>
-                                            <a href="<c:url value="/carrinho"/>">
+                                            <a href="<c:url value="/entrar"/>">
                                                 <span class="glyphicon glyphicon-shopping-cart"></span> Meu Carrinho
                                             </a>
                                         </li>

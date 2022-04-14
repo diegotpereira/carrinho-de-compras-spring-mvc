@@ -25,7 +25,7 @@ public class CarrinhoItem implements Serializable{
 	private Produto produto;
 
 	@ManyToOne
-	@JoinColumn(name = "carrinhId")
+	@JoinColumn(name = "carrinhoId")
 	@JsonIgnore
 	private Carrinho carrinho;
 

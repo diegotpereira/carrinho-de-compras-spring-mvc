@@ -6,11 +6,11 @@ import br.com.java.spring.mvc.model.*;
 
 public interface UsuarioDao {
 	
-	List<Usuario> getTodosUsuarios();
+	List<User> getTodosUsuarios();
 
 	void deletarUSuario(int usuarioId);
 
-	void addUsuario(Usuario usuario);
+	void addUsuario(User usuario);
 
-	Usuario getUsuarioPorId(int usuarioId);
+	User getUsuarioPorId(int usuarioId);
 }

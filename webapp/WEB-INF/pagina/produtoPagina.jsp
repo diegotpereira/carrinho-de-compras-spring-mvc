@@ -71,11 +71,11 @@
                                     <td>
                                         <c:url value="/carrinho/add/${produtoObj.produtoId}" var="addCarrinho"></c:url>
                                         <div ng-controller="meuControle">
-                                            <security:authorize access="hasRole('FUNCAO_USUARIO')">
+<%--                                             <security:authorize access="hasRole('FUNCAO_USUARIO')"> --%>
                                             <a href="#" ng-click="addNoCarrinho(${produtoObj.produtoId})" class="btn btn-info" style="margin-top: 0px; width: 150px; float: left; margin-right: 31px;">
                                                 <span class="glyphicon glyphicon-shopping-cart"></span>
                                             </a>
-                                            </security:authorize>
+<%--                                             </security:authorize> --%>
                                             <a href="<c:url value="/getTodosProdutos"/>" class="btn btn-info" style="margin-top: 0px; width: 150px; float: left; margin-right: 31px;">
                                                 <span class="glyphicon glyphicon-arrow-left"></span>
                                             </a>

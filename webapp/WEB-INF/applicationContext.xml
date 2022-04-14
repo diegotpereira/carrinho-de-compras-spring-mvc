@@ -53,7 +53,7 @@
 				<value>br.com.java.spring.mvc.model.ClientePedido</value>
 				<value>br.com.java.spring.mvc.model.EnderecoCobranca</value>
 				<value>br.com.java.spring.mvc.model.EnderecoEntrega</value>
-				<value>br.com.java.spring.mvc.model.Usuario</value>
+				<value>br.com.java.spring.mvc.model.User</value>
 				<value>br.com.java.spring.mvc.model.Produto</value>
 				<value>br.com.java.spring.mvc.model.Consultas</value>
 			</list>

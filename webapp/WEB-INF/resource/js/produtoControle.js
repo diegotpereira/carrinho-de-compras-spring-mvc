@@ -12,7 +12,6 @@ var app = angular.module("meuApp", []).controller(
         }
 
         $scope.addNoCarrinho = function(produtoId) {
-	        console.log(produtoId)
             $http.put(BASE_PATH + "/carrinho/add/" + produtoId)
                 .success(function() {
                     alert("Adicionado com sucesso");
