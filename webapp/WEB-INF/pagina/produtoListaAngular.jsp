@@ -69,13 +69,13 @@
                                             <span class="glyphicon glyphicon-info-sign"></span>
                                         </a>
                                         <!--ver apenas para o usuário-->
-                                        <security:authorize ifAnyGranted="FUNCAO_USUARIO">
+                                        <security:authorize ifAnyGranted="ROLE_USER">
                                             <a href="#" ng-click="addNoCarrinho(${b.produtoId})" class="btn btn-primary" style="margin-left: 5px;">
                                                 <span class="glyphicon glyphicon-shopping-cart"></span>
                                             </a>
                                         </security:authorize>
                                         <!--ver apenas para o administrador-->
-                                        <security:authorize ifAnyGranted="FUNCAO_ADMIN">
+                                        <security:authorize ifAnyGranted="ROLE_ADMIN">
                                             <a href="admin/produto/editarProduto/{b.produtoId}" class="btn btn-success" style="margin-left: 5px;">
                                                 <span class="glyphicon glyphicon-edit"></span>
                                             </a>

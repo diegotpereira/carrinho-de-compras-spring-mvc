@@ -52,10 +52,11 @@
                                     <c:if test="${!empty pageContext.request.userPrincipal.name}">
                                         <li>
                                             <a href="<c:url value="/index1"/>">
-                                                <span class="glyphicon glyphicon-shopping-user"></span> Bem vindo
+                                                <span class="glyphicon glyphicon-shopping-user"></span> 
+                                                Bem vindo...${pageContext.request.userPrincipal.name}
                                             </a>
                                         </li>
-                                        <security:authorize access="hasRole('FUNCAO_USUARIO')">
+                                        <security:authorize access="hasRole('ROLE_USER')">
                                         <li>
                                             <a href="<c:url value="/carrinho/getCarrinhoPorId"/>">
                                                 <span class="glyphicon glyphicon-shopping-cart"></span> Carrinho

@@ -31,7 +31,7 @@ var app = angular.module("meuApp", []).controller(
             $scope.atualizarCarrinho(carrinhoId);
         }
         $scope.removerDoCarrinho = function(carrinhoItemId) {
-            $http.put(BASE_PATH + "/cart/removeCarrinhoItem/" +
+            $http.put(BASE_PATH + "/carrinho/removerCarrinhoItem/" +
                 carrinhoItemId).success(function() {
                 $scope.atualizarCarrinho();
             });

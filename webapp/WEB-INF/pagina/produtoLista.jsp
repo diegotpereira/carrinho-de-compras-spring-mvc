@@ -42,11 +42,11 @@
                                     <th>Fabricante</th>
                                     <th>
                                         Exibir
-                                        <security:authorize>
+                                        <security:authorize access="hasAnyRole('ROLE_USER')">
                                             / Add Carrinho
                                         </security:authorize>
                                         <!-- visualização apenas para o administrador-->
-                                        <security:authorize access="hasAnyRole('FUNCAO_ADMIN')">
+                                        <security:authorize access="hasAnyRole('ROLE_ADMIN')">
                                             / Editar/Deletar
                                         </security:authorize>
                                     </th>
@@ -70,13 +70,13 @@
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                             <!--visualização apenas para o usuário-->
-<%--                                             <security:authorize> --%>
+                                            <security:authorize access="hasAnyRole('ROLE_USER')">
                                                 <a href="#" ng-click="addNoCarrinho(${prod.produtoId})" class="btn btn-primary" style="margin-left: 5px;">
                                                     <span class="glyphicon glyphicon-shopping-cart"></span>
                                                 </a>
-<%--                                             </security:authorize> --%>
+                                            </security:authorize>
                                             <!--visualização apenas para o admin-->
-                                            <security:authorize access="hasAnyRole('FUNCAO_ADMIN')">
+                                            <security:authorize access="hasAnyRole('ROLE_ADMIN')">
                                                 <a href="admin/produto/editarProduto/${prod.produtoId}" class="btn btn-success" style="margin-left: 5px;">
                                                     <span class="glyphicon glyphicon-edit"></span>
                                                 </a>

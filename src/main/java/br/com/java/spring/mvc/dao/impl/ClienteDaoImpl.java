@@ -37,7 +37,7 @@ public class ClienteDaoImpl implements ClienteDao{
 		cliente.getUsuarios().setAtivado(true);
 
 		Autoridades autoridades = new Autoridades();
-		autoridades.setAutoridades("FUNCAO_USUARIO");
+		autoridades.setAutoridades("ROLE_USER");
 		autoridades.setEmailId(cliente.getUsuarios().getEmailId());
 
 		session.save(cliente);
