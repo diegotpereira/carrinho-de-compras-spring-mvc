@@ -9,10 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import br.com.java.spring.mvc.dao.ClienteDao;
-import br.com.java.spring.mvc.model.Autoridades;
-import br.com.java.spring.mvc.model.Cliente;
-import br.com.java.spring.mvc.model.Usuario;
-
+import br.com.java.spring.mvc.model.*;
 
 @Repository
 public class ClienteDaoImpl implements ClienteDao{
@@ -58,7 +55,7 @@ public class ClienteDaoImpl implements ClienteDao{
 	@Override
 	public Cliente getClientePorEmailId(String emailId) {
 		Session session = sessionFactory.openSession();
-		Query query = session.createQuery("from User where emailId =?");
+		Query query = session.createQuery("from Usuario where emailId =?");
 		query.setString(0, emailId);
 
 		Usuario usuarios = (Usuario)query.uniqueResult();
