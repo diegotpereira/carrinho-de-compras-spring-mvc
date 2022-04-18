@@ -12,11 +12,13 @@
 
             <!-- CSS  -->
             <link href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-            <link href="${pageContext.request.contextPath}/resource/css/overall.css" rel="stylesheet" type="text/css">
+<%--             <link href="${pageContext.request.contextPath}/resource/css/overall.css" rel="stylesheet" type="text/css"> --%>
 
             <!-- CSS  -->
-            <script src="${pageContext.request.contextPath}/resource/js/jquery.js"></script>
+<%--             <script src="${pageContext.request.contextPath}/resource/js/jquery.js"></script> --%>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
             <script src="${pageContext.request.contextPath}/resource/js/produtoControle.js"></script>
             
             <title>Shop Online</title>

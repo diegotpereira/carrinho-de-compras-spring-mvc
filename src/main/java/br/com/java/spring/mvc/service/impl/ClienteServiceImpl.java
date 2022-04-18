@@ -27,13 +27,13 @@ public class ClienteServiceImpl implements ClienteService{
 	@Override
 	public List<Cliente> getTodosClientes() {
 		// TODO Auto-generated method stub
-		return null;
+		return clienteDao.getTodosClientes();
 	}
 
 	@Override
 	public Cliente getClientePorEmailId(String emailId) {
 		// TODO Auto-generated method stub
-		return null;
+		return clienteDao.getClientePorEmailId(emailId);
 	}
 
 }

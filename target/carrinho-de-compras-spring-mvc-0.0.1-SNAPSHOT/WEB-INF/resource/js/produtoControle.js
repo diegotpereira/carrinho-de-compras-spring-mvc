@@ -5,7 +5,7 @@ var app = angular.module("meuApp", []).controller(
         var BASE_PATH = "http://localhost:8080";
 
         $scope.getProdutoLista = function() {
-            $http.get(BASE_PATH + "/getProdutoLista")
+            $http.get(BASE_PATH + "/getProdutosLista")
                 .success(function(data) {
                     $scope.produtos = data;
                 });
@@ -31,7 +31,7 @@ var app = angular.module("meuApp", []).controller(
             $scope.atualizarCarrinho(carrinhoId);
         }
         $scope.removerDoCarrinho = function(carrinhoItemId) {
-            $http.put(BASE_PATH + "/cart/removeCartItem/" +
+            $http.put(BASE_PATH + "/carrinho/removerCarrinhoItem/" +
                 carrinhoItemId).success(function() {
                 $scope.atualizarCarrinho();
             });

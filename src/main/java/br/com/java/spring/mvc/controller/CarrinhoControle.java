@@ -1,4 +1,4 @@
-package br.com.java.spring.mvc.controller;
+	package br.com.java.spring.mvc.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
