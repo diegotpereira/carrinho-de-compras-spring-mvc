@@ -4,7 +4,7 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 
-        <!DOCTYPE html>
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
         <html>
 
         <head>
@@ -12,10 +12,8 @@
 
             <!-- CSS  -->
             <link href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<%--             <link href="${pageContext.request.contextPath}/resource/css/overall.css" rel="stylesheet" type="text/css"> --%>
 
             <!-- CSS  -->
-<%--             <script src="${pageContext.request.contextPath}/resource/js/jquery.js"></script> --%>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -33,7 +31,7 @@
                         <div>
                             <a href="" class="btn btn-danger pull-left" ng-click="limparCarrinho()" style="margin-top: 15px; margin-left: 20px;">
                                 <span class="glyphicon glyphicon-remove-sign">
-									Limpar Carrinho
+									Limpar carrinho
 								</span>
                             </a>
                         </div>

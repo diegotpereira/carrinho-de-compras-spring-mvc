@@ -44,8 +44,10 @@ var app = angular.module("meuApp", []).controller(
             });
         }
 
-        $scope.calcularValorTotal = function() {
+        $scope.calcularValorTotal = function(data) {
             var valorTotal = 0.0;
+            $scope.carrinhos = data;
+            console.log(carrinhoItem);
             for (var i = 0; i < $scope.carrinhos.carrinhoItem.length; i++)
                 valorTotal = valorTotal + $scope.carrinhos.carrinhoItem[i].preco;
             return valorTotal;
