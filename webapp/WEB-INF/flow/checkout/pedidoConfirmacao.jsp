@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page isELIgnored="false"%>
+<jsp:include page="/WEB-INF/pagina/navbar.jsp" />
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
 <head>
@@ -8,24 +12,24 @@
     <title>Document</title>
 </head>
 
-<body>
+<body style="padding: 0px">
     <div class="container wrapper">
-        <div class="container">
-            <div class="row">
-                <form:form>
+        <div class="container" style="margin-bottom: 19px">
+            <div class="row" style="margin-top: 20px">
+                <form:form command="pedido" class="form-horizontal">
                     <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
-                        <div>
+                        <div style="text-align: center;">
                             <h1>Recibo</h1>
                         </div>
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <address>
-									<strong>EndereÃ§o de Entrega</strong>
+									<strong>Endereço de Entrega</strong> <br />
 									${pedido.carrinho.cliente.enderecoEntrega.endereco} <br/>
-									${pedido.carrinho.cliente.enderecoEntrega.cidade} <br/>
+									${pedido.carrinho.cliente.enderecoEntrega.cidade},
 									${pedido.carrinho.cliente.enderecoEntrega.estado} <br/>
-									${pedido.carrinho.cliente.enderecoEntrega.pais} <br/>
-									${pedido.carrinho.cliente.enderecoEntrega.cep} <br/>
+									${pedido.carrinho.cliente.enderecoEntrega.pais} 
+									${pedido.carrinho.cliente.enderecoEntrega.cep}
 								</address>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6 text-right">
@@ -37,7 +41,7 @@
                         <div class="row">
                             <div class="col xs-6 col-sm-6 col-md-6">
                                 <address>
-									<strong>EndereÃ§o de CobranÃ§a</strong> <br/>
+									<strong>Endereço de Cobrança</strong> <br/>
 									${pedido.carrinho.cliente.enderecoCobranca.endereco} <br />
 									${pedido.carrinho.cliente.enderecoCobranca.cidade},
 									${pedido.carrinho.cliente.enderecoCobranca.estado} <br />
@@ -75,7 +79,7 @@
                         </div>
                         <input type="hidden" name="_flowExecutionKey" /> <br /> <br />
 
-                        <button class="btn btn-lg btn-default" name="_eventId_backToCollectShippingDetail">Voltar</button>
+                        <button class="btn btn-lg btn-default" name="_eventId_backToCollectShippingDetail" style="float: left">Voltar</button>
 
                         <input type="submit" value="Enviar pedido" class="btn btn-lg btn-info" name="_eventId_orderConfirmed" />
 
@@ -88,3 +92,4 @@
 </body>
 
 </html>
+<jsp:include page="/WEB-INF/pagina/footer.jsp" />

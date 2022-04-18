@@ -27,6 +27,6 @@ public class PedidoControle {
 		clientePedido.setEnderecoCobranca(cliente.getEnderecoCobranca());
 		clientePedidoService.addClientePedido(clientePedido);
 
-		return "redirect:/verificar?carrinhoId" + carrinhoId;
+		return "redirect:/checkout?carrinhoId=" + carrinhoId;
 	}
 }

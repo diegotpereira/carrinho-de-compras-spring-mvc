@@ -5,16 +5,16 @@
         <html>
 
         <head>
-            <meta charset="ISO-8859-1">
+            <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-            <!-- CSS  -->
-            <link href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-            <link href="${pageContext.request.contextPath}/resource/css/overall.css" rel="stylesheet" type="text/css">
+<!--             CSS  -->
+<%--             <link href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css" rel="stylesheet"> --%>
+<%--             <link href="${pageContext.request.contextPath}/resource/css/overall.css" rel="stylesheet" type="text/css"> --%>
 
-            <!-- CSS  -->
-            <script src="${pageContext.request.contextPath}/resource/js/jquery.js"></script>
-            <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
-            <title>Insert title here</title>
+<!--             JS  -->
+<%--             <script src="${pageContext.request.contextPath}/resource/js/jquery.js"></script> --%>
+<%--             <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script> --%>
+<!--             <title>Insert title here</title> -->
         </head>
 
         <body>
