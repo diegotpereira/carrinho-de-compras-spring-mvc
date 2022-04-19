@@ -4,7 +4,7 @@
         xsi:schemaLocation="http://www.springframework.org/schema/webflow
                       https://www.springframework.org/webflow/spring-webflow.xsd">
 
-	  <var name="pedido" class="br.com.java.spring.mvc.model.ClientePedido" />
+	  <var name="order" class="br.com.java.spring.mvc.model.ClientePedido" />
 	  
 
 	  <action-state id="addCarrinhoNoPedido">
