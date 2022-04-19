@@ -7,16 +7,16 @@
        http://www.springframework.org/schema/security 
        http://www.springframework.org/schema/security/spring-security.xsd
        http://www.springframework.org/schema/webflow-config 
-        http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd">
-
+       http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd">
+        
 	
 	<!-- propriedades do banco de dados DataSource -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="org.h2.Driver" />
-		<property name="url" value="jdbc:h2:tcp://localhost/~/carrinho_de_compras_spring_mvc" />
-		<property name="username" value="sa" />
-		<property name="password" value="" />
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/carrinho_de_compras_spring_mvc?useSSL=false&amp;serverTimezone=UTC" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
 	</bean>
 
 	<bean id="sessionFactory"
@@ -26,7 +26,7 @@
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="hibernateProperties">
 			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 
 				<!-- hibernate mapeamento para banco de dados automaticamente -->
 				<!-- quando usamos create-drop em vez de update a tabela é criada automaticamente
@@ -36,6 +36,8 @@
 				<!-- se a consulta quer mostrar os dados no console -->
 				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.format_sql">true</prop>
+<!-- 				<prop key="spring.h2.console.enabled">true</prop> -->
+<!-- 				<prop key="spring.h2.console.path=/h2-console">true</prop> -->
 
 			</props>
 		</property>
@@ -44,10 +46,16 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>br.com.java.spring.mvc.model.Autoridades</value>
-				<value>br.com.java.spring.mvc.model.EnderecoCobranca</value>
+				<value>br.com.java.spring.mvc.model.Authorities</value>
+				<value>br.com.java.spring.mvc.model.Carrinho</value>
+				<value>br.com.java.spring.mvc.model.CarrinhoItem</value>
 				<value>br.com.java.spring.mvc.model.Cliente</value>
+				<value>br.com.java.spring.mvc.model.ClientePedido</value>
+				<value>br.com.java.spring.mvc.model.EnderecoCobranca</value>
 				<value>br.com.java.spring.mvc.model.EnderecoEntrega</value>
 				<value>br.com.java.spring.mvc.model.Usuario</value>
+				<value>br.com.java.spring.mvc.model.Produto</value>
+				<value>br.com.java.spring.mvc.model.Consultas</value>
 			</list>
 		</property>
 
@@ -61,6 +69,61 @@
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+
+	<security:http auto-config="true" use-expressions="true">
+	    <security:intercept-url pattern="/index/**"
+			access="permitAll"/>
+		<security:intercept-url pattern="/index1/**"
+			access="permitAll"/>
+		<security:intercept-url pattern="/entrar"
+			access="permitAll"/>
+		<security:intercept-url pattern="/carrinho/**"
+			access="permitAll"/>
+		<security:intercept-url pattern="/get*/**"
+			access="permitAll"/>
+		<security:intercept-url pattern="/admin*/**"
+			access="permitAll"/>
+		<security:form-login login-page="/entrar"
+			login-processing-url="/j_spring_security_check"
+			username-parameter="j_username"
+			password-parameter="j_password"
+			authentication-failure-url="/entrar?error"
+			default-target-url="/index1" />
+		<security:logout logout-url="/sair" delete-cookies="JSESSIONID" logout-success-url="/entrar?sair" />
+		<security:csrf disabled="true"/>
+	</security:http>
+
+	<security:authentication-manager>
+		<security:authentication-provider>
+			 <security:jdbc-user-service
+				data-source-ref="dataSource"
+				authorities-by-username-query="SELECT 
+				emailId,autoridades FROM autoridades WHERE emailId =?"
+				users-by-username-query="SELECT 
+				emailId, password, ativado FROM usuarios WHERE emailId=?" />
+		</security:authentication-provider>
+	</security:authentication-manager>
+	
+	<webflow-config:flow-executor id="flowExecutor" flow-registry="flowRegistry">
+	</webflow-config:flow-executor>
+	
+	<webflow-config:flow-registry id="flowRegistry" base-path="/WEB-INF/flow">
+	     <webflow-config:flow-location path="/checkout/checkout-flow.xml" id="checkout">
+	     </webflow-config:flow-location>
+	</webflow-config:flow-registry>
+	
+	<bean id="flowHandleMapping"
+		class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+		<property name="flowRegistry" ref="flowRegistry"></property>
+	</bean>
+	
+	<bean id="flowHandlerAdapter" class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
+
+	<property name="flowExecutor" ref="flowExecutor"></property>
+
+	</bean>
+	
+	 <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
 
 		
 </beans>

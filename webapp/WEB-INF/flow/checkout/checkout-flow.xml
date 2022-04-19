@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flow xmlns="http://www.springframework.org/schema/webflow"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.springframework.org/schema/webflow
-        http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                      https://www.springframework.org/webflow/spring-webflow.xsd">
 
 	  <var name="pedido" class="br.com.java.spring.mvc.model.ClientePedido" />
+	  
 
 	  <action-state id="addCarrinhoNoPedido">
 	      <evaluate expression="carrinhoDaoImpl.validar(requestParameters.carrinhoId)" result="pedido.carrinho" />
-		  <transiton to="avisoCarrinhoInvalido" on-exception="java.io.IOException" />
-		  <transiton to="coletarInformacoesCliente" />
+		  <transition to="avisoCarrinhoInvalido" on-exception="java.io.IOException" />
+		  <transition to="coletarInformacoesCliente" />
 	  </action-state>
 
 	  <view-state id="coletarInformacoesCliente" view="coletarInformacoesCliente.jsp" model="pedido">
-	      <transiton on="informacoesClienteColetadas" to="coletarDetalheEnvio" />
+	      <transition on="informacoesClienteColetadas" to="coletarDetalheEnvio" />
 	  </view-state>
 
 	  <view-state id="coletarDetalheEnvio" view="coletarDetalheEnvio.jsp" model="pedido">
-	     <transiton on="envioDetalheColetado" to="pedidoConfirmacao" />
-		 <transiton on="voltarParaColetarInformacoesCliente" to="coletarInformacoesCliente" />
+	     <transition on="envioDetalheColetado" to="pedidoConfirmacao" />
+		 <transition on="voltarParaColetarInformacoesCliente" to="coletarInformacoesCliente" />
 	  </view-state>
 
 	  <view-state id="pedidoConfirmacao">
-	     <transiton on="pedidoConfirmado" to="processoOrdem" />
-		 <transiton on="voltarParaColetarInformacoesCliente" to="coletarDetalheEnvio" />
+	     <transition on="pedidoConfirmado" to="processoOrdem" />
+		 <transition on="voltarParaColetarInformacoesCliente" to="coletarDetalheEnvio" />
 	  </view-state>
 
 	  <action-state id="processoOrdem">
-	     <evaluate expression="carrinhoItemDaoImpli.removerTodosItensCarrinho" />
-		 <transiton to="obrigadoCliente" />
+	     <evaluate expression="carrinhoItemDaoImpl.removerTodosItensCarrinho" />
+		 <transition to="obrigadoCliente" />
 	  </action-state>
 
 	  <view-state id="obrigadoCliente" model="pedido">
@@ -38,12 +39,12 @@
 	  <end-state id="endState" />
 
 	  <view-state id="avisoCarrinhoInvalido">
-	     <transiton to="endState" />
+	     <transition to="endState" />
 	  </view-state>
 
 	  <end-state id="cancelaVerificar" view="verificarSairCancelar.jsp" />
 
-	  <global-transitons>
-	     <transiton on="cancel" to="cancelaVerificar" />
-	  </global-transitons>
+	  <global-transitions>
+	     <transition on="cancel" to="cancelaVerificar" />
+	  </global-transitions>
 </flow>

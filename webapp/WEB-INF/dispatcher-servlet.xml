@@ -15,7 +15,7 @@
 	 <mvc:default-servlet-handler/>
 	
 
-	<context:component-scan base-package="br.com.java.spring.mvc."></context:component-scan>
+	<context:component-scan base-package="br.com.java.spring.mvc"></context:component-scan>
 
 
 	<bean id="viewResolver"
@@ -28,4 +28,8 @@
 		and Images in resource folder -->
 
 	<mvc:resources mapping="/resource/**" location="/WEB-INF/resource/" />
+	
+<!-- 	<mvc:resources mapping="/resource/**" location="/WEB-INF/resource/flow/checkout/checkout-flow.xml" /> -->
+	
+<!--     <import resource="/flow/checkout/checkout-flow.xml" /> -->
 </beans>
