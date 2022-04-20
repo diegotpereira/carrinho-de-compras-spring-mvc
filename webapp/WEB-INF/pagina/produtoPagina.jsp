@@ -5,6 +5,7 @@
     <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security"%>
     <%@ page isELIgnored="false"%>
 
+        <jsp:include page="/WEB-INF/pagina/navbar.jsp" />
         <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
             <html>
 
@@ -13,12 +14,12 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1">
 
                 <!-- CSS  -->
-                <link href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-                <link href="${pageContext.request.contextPath}/resource/css/overall.css" rel="stylesheet" type="text/css">
+<%--                 <link href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css" rel="stylesheet"> --%>
+<%--                 <link href="${pageContext.request.contextPath}/resource/css/overall.css" rel="stylesheet" type="text/css"> --%>
 
-                <!-- CSS  -->
-                <script src="${pageContext.request.contextPath}/resource/js/jquery.js"></script>
-                <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script>
+                <!-- JS  -->
+<%--                 <script src="${pageContext.request.contextPath}/resource/js/jquery.js"></script> --%>
+<%--                 <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script> --%>
                 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
                 <script src="${pageContext.request.contextPath}/resource/js/produtoControle.js"></script>
 
@@ -26,7 +27,7 @@
             </head>
 
             <body>
-                <jsp:include page="/WEB-INF/pagina/navbar.jsp" />
+                
                 <div ng-app="meuApp">
                     <div class="container" style="width: 829px;">
                         <h2>Detalhe do Produto</h2>
@@ -86,7 +87,7 @@
                         </table>
                     </div>
                 </div>
-                <jsp:include page="/WEB-INF/pagina/footer.jsp" />
             </body>
 
             </html>
+            <jsp:include page="/WEB-INF/pagina/footer.jsp" />

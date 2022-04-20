@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import br.com.java.spring.mvc.model.Carrinho;
 import br.com.java.spring.mvc.model.CarrinhoItem;
@@ -66,7 +67,7 @@ public class CarrinhoItemControle {
 		this.produtoService = produtoService;
 	}
 
-	@RequestMapping(value ="/carrinho/add/{produtoId}")
+	@RequestMapping("/carrinho/add/{produtoId}")
 	@ResponseStatus(value = HttpStatus.NO_CONTENT)
 	public void addCarrinhoItem(@PathVariable(value = "produtoId") int produtoId) {
 		System.out.println("Chegou no controle");

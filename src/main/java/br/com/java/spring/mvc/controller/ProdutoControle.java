@@ -83,7 +83,7 @@ public class ProdutoControle {
 				}
 			}
 		
-		return "redirect:/getAllProdutos";
+		return "redirect:/getTodosProdutos";
 	}
 	
 	//Exibir Produtos
