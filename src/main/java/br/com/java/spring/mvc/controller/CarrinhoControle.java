@@ -39,7 +39,7 @@ public class CarrinhoControle {
 		this.carrinhoService = carrinhoService;
 	}
 
-	@RequestMapping("/carrinho/getCarrinhoPorId")
+	@RequestMapping("carrinho/getCarrinhoPorId")
 	public String getCarrinhoId(Model model) {
 		User usuario = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		String emailId = usuario.getUsername();

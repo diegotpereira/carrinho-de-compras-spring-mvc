@@ -30,17 +30,15 @@
                             <br> Lista de produtos compradas
                             <div>
                                 <a href="" class="btn btn-danger pull-left" ng-click="limparCarrinho()" style="margin-top: 15px; margin-left: 20px;">
-                                    <span class="glyphicon glyphicon-remove-sign">
-									Limpar carrinho
-								</span>
+                                    <span class="glyphicon glyphicon-remove-sign"></span>
+                                    Limpar carrinho
                                 </a>
                             </div>
                             <div>
                                 <c:url value="/pedido/${carrinhoId}" var="url1"></c:url>
                                 <a href="${url1}" class="btn btn-danger pull-left" style="margin-top: 15px; margin-left: 20px;">
-                                    <span class="glyphicon glyphicon-shipping-cart">
-									Confirmar
-								</span>
+                                    <span class="glyphicon glyphicon-shipping-cart"></span>
+                                    Confirmar
                                 </a>
                             </div>
                             <table class="table table-hover" id="produtoLista">
@@ -48,7 +46,7 @@
                                     <tr>
                                         <th>Nome do Produto</th>
                                         <th>Quantidade</th>
-                                        <th>Preï¿½o</th>
+                                        <th>Preço</th>
                                         <th>Valor Total</th>
                                     </tr>
                                 </thead>

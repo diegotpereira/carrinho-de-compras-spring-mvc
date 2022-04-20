@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flow xmlns="http://www.springframework.org/schema/webflow"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.springframework.org/schema/webflow
-                      https://www.springframework.org/webflow/spring-webflow.xsd">
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow 
+      http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 
-	  <var name="order" class="br.com.java.spring.mvc.model.ClientePedido" />
+	  <var name="pedido" class="br.com.java.spring.mvc.model.ClientePedido" />
 	  
 
 	  <action-state id="addCarrinhoNoPedido">
