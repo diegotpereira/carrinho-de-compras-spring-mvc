@@ -14,12 +14,8 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1">
 
                 <!-- CSS  -->
-<%--                 <link href="${pageContext.request.contextPath}/resource/bootstrap/css/bootstrap.min.css" rel="stylesheet"> --%>
-<%--                 <link href="${pageContext.request.contextPath}/resource/css/overall.css" rel="stylesheet" type="text/css"> --%>
 
                 <!-- JS  -->
-<%--                 <script src="${pageContext.request.contextPath}/resource/js/jquery.js"></script> --%>
-<%--                 <script src="${pageContext.request.contextPath}/resource/bootstrap/js/bootstrap.min.js"></script> --%>
                 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
                 <script src="${pageContext.request.contextPath}/resource/js/produtoControle.js"></script>
 
